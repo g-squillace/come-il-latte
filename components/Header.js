@@ -3,7 +3,7 @@ import Link from 'next/link';
 import i18n from "../lib/i18n";
 
 export default function Header({ site, design, locale }) {
-  const siteName = site.globalSeo.siteName
+  const siteName = site.globalSeo && site.globalSeo.siteName
   const locales = site.locales
   const logoUrl = design.logo.url
 
