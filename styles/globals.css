@@ -1,3 +1,38 @@
 @tailwind base;
+
+@layer base {
+  @font-face {
+    font-family: 'Sang Bleau';
+    font-weight: 400;
+    font-style: 'italic';
+    src: url('/fonts/sang-bleau/400-regular-italic.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Sang Bleau';
+    font-weight: 400;
+    font-style: 'normal';
+    src: url('/fonts/sang-bleau/400-regular.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Sang Bleau';
+    font-weight: 500;
+    src: url('/fonts/sang-bleau/500-medium.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Sang Bleau';
+    font-weight: 700;
+    src: url('/fonts/sang-bleau/700-bold.woff2') format('woff2');
+  }
+
+  body {
+    @apply font-body;
+    @apply text-primary;
+    @apply bg-back;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
