@@ -1,6 +1,6 @@
 export default function Footer({}) {
   return (
-    <footer>
+    <footer className="container">
       <a
         href="https://www.cantierecreativo.net"
         target="_blank"
