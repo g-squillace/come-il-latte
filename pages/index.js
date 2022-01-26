@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Image, renderMetaTags } from "react-datocms";
+import { renderMetaTags } from "react-datocms";
 import { request } from "lib/datocms";
 
 import Header from 'components/Header';
@@ -50,11 +50,41 @@ const HOMEPAGE_QUERY = `query HomePage{
     }
   }
   landing {
-    title
     seo: _seoMetaTags {
       attributes
       content
       tag
+    }
+    title
+    blocks {
+      ... on FlagBlockRecord {
+        id
+        _modelApiKey
+        label
+        text
+        title
+        reverse
+        image {
+          responsiveImage(sizes: "(min-width: 1024px) 50vw, 100vw", imgixParams: { fit: max, w: 620, h: 730, auto: [format,compress] }) {
+            srcSet
+            webpSrcSet
+            sizes
+            src
+            width
+            height
+            aspectRatio
+            alt
+            title
+            base64
+          }
+        }
+      }
+      ... on TextBlockRecord {
+        id
+        _modelApiKey
+        title
+        text
+      }
     }
   }
 }`;
@@ -68,9 +98,24 @@ export async function getStaticProps() {
   };
 }
 
+function renderBlock(block) {
+  switch (block._modelApiKey) {
+    case 'flag_block':
+      return (
+        <Flag block={block} key={block.id} />
+      );
+
+    case 'text_block':
+      return (
+        <Text block={block} key={block.id} />
+      );
+  }
+}
+
 export default function Home({ data }) {
   const site = {...data.site}
   const page = {...data.landing}
+  const blocks = {...page.blocks}
   const design = {...data.customDesign}
   const colorText = {...design.colorText}
   const colorTextAlt = {...design.colorTextAlt}
@@ -94,16 +139,12 @@ export default function Home({ data }) {
       <Head>
         {renderMetaTags(page.seo.concat(site.favicon))}
       </Head>
-      <Header />
 
+      <Header design={design} site={site} />
       <main id="content">
-        <Hero />
-        <Cover />
-        <Flag />
-        <Flag reverse={true}/>
-        <Cover />
-        <Text />
-        <Focus />
+        {Object.values(blocks).map((block) => (
+          renderBlock(block)
+        ))}
       </main>
       <Footer />
     </div>
