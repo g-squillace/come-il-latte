@@ -68,7 +68,7 @@ const HOMEPAGE_QUERY = `query HomePage{
         title
         reverse
         image {
-          responsiveImage(sizes: "(min-width: 1024px) 50vw, 100vw", imgixParams: { fit: max, w: 620, h: 730, auto: [format,compress] }) {
+          responsiveImage(sizes: "(min-width: 1024px) 50vw, 100vw", imgixParams: { fit: max, w: 800, h: 800, auto: [format,compress] }) {
             srcSet
             webpSrcSet
             sizes
