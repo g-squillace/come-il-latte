@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { renderMetaTags } from "react-datocms";
 import { request } from "lib/datocms";
+import { useRouter } from 'next/router';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -18,6 +19,7 @@ const HOMEPAGE_QUERY = `query HomePage{
       content
       tag
     }
+    locales
     globalSeo {
       siteName
     }
@@ -116,6 +118,8 @@ function renderBlock(block) {
 }
 
 export default function Home({ data }) {
+  const router = useRouter()
+  const locale = router.locale
   const site = {...data.site}
   const page = {...data.landing}
   const blocks = {...page.blocks}
@@ -143,7 +147,7 @@ export default function Home({ data }) {
         {renderMetaTags(page.seo.concat(site.favicon))}
       </Head>
 
-      <Header design={design} site={site} />
+      <Header design={design} site={site} locale={locale} />
       <main id="content">
         {Object.values(blocks).map((block) => (
           renderBlock(block)
