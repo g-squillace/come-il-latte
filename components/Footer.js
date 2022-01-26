@@ -4,7 +4,7 @@ export default function Footer({}) {
       <a
         href="https://www.cantierecreativo.net"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer noopener"
       >Design & Develop by Cantiere Creativo</a>
     </footer>
   );
