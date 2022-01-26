@@ -3,14 +3,11 @@ import { renderMetaTags } from "react-datocms";
 import { request } from "lib/datocms";
 import { useRouter } from 'next/router';
 
+import CustomCssVars from 'components/CustomCssVars'
+
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-
-import Cover from 'components/Cover';
-import Flag from 'components/Flag';
-import Focus from 'components/Focus';
-import Hero from 'components/Hero';
-import Text from 'components/Text';
+import Blocks from 'components/Blocks';
 
 const HOMEPAGE_QUERY = `query HomePage{
   site: _site {
@@ -103,20 +100,6 @@ export async function getStaticProps() {
   };
 }
 
-function renderBlock(block) {
-  switch (block._modelApiKey) {
-    case 'flag_block':
-      return (
-        <Flag block={block} key={block.id} />
-      );
-
-    case 'text_block':
-      return (
-        <Text block={block} key={block.id} />
-      );
-  }
-}
-
 export default function Home({ data }) {
   const router = useRouter()
   const locale = router.locale
@@ -124,35 +107,18 @@ export default function Home({ data }) {
   const page = {...data.landing}
   const blocks = {...page.blocks}
   const design = {...data.customDesign}
-  const colorText = {...design.colorText}
-  const colorTextAlt = {...design.colorTextAlt}
-  const colorBack = {...design.colorBack}
-  const colorBackAlt = {...design.colorBackAlt}
-  const colorAccent = {...design.colorAccent}
   return (
     <div>
-      <style global jsx>{`
-        :root {
-          --color-text: ${colorText.red} ${colorText.green} ${colorText.blue};
-          --color-text-alt: ${colorTextAlt.red} ${colorTextAlt.green} ${colorTextAlt.blue};
-          --color-back: ${colorBack.red} ${colorBack.green} ${colorBack.blue};
-          --color-back-alt: ${colorBackAlt.red} ${colorBackAlt.green} ${colorBackAlt.blue};
-          --color-accent: ${colorAccent.red} ${colorAccent.green} ${colorAccent.blue};
-          --font-heading: 'Sang Bleau';
-          --font-body: 'Inter';
-        }
-      `}</style>
-
+      <CustomCssVars data={design} />
       <Head>
         {renderMetaTags(page.seo.concat(site.favicon))}
       </Head>
 
       <Header design={design} site={site} locale={locale} />
       <main id="content">
-        {Object.values(blocks).map((block) => (
-          renderBlock(block)
-        ))}
+        <Blocks blocks={blocks} />
       </main>
+
       <Footer />
     </div>
   )
