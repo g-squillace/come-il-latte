@@ -9,101 +9,104 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Blocks from 'components/Blocks';
 
-const HOMEPAGE_QUERY = `query HomePage{
-  site: _site {
-    favicon: faviconMetaTags {
-      attributes
-      content
-      tag
-    }
-    locales
-    globalSeo {
-      siteName
-    }
-  }
-  customDesign {
-    logo {
-      url
-    }
-    colorText {
-      red
-      green
-      blue
-    }
-    colorTextAlt {
-      red
-      green
-      blue
-    }
-    colorBack {
-      red
-      green
-      blue
-    }
-    colorBackAlt {
-      red
-      green
-      blue
-    }
-    colorAccent {
-      red
-      green
-      blue
-    }
-  }
-  landing {
-    seo: _seoMetaTags {
-      attributes
-      content
-      tag
-    }
-    title
-    blocks {
-      ... on FlagBlockRecord {
-        id
-        _modelApiKey
-        label
-        text
-        title
-        alignReverse
-        colorsAlt
-        image {
-          responsiveImage(sizes: "(min-width: 1024px) 50vw, 100vw", imgixParams: { fit: max, w: 800, h: 800, auto: [format,compress] }) {
-            srcSet
-            webpSrcSet
-            sizes
-            src
-            width
-            height
-            aspectRatio
-            alt
-            title
-            base64
+export async function getStaticProps({locale}) {
+  const formattedLocale = locale.split("-")[0];
+  const graphqlRequest = {
+    query: `
+      {
+        site: _site(locale: ${formattedLocale}) {
+          favicon: faviconMetaTags {
+            attributes
+            content
+            tag
+          }
+          locales
+          globalSeo {
+            siteName
+          }
+        }
+        customDesign {
+          logo {
+            url
+          }
+          colorText {
+            red
+            green
+            blue
+          }
+          colorTextAlt {
+            red
+            green
+            blue
+          }
+          colorBack {
+            red
+            green
+            blue
+          }
+          colorBackAlt {
+            red
+            green
+            blue
+          }
+          colorAccent {
+            red
+            green
+            blue
+          }
+        }
+        landing(locale: ${formattedLocale}) {
+          seo: _seoMetaTags {
+            attributes
+            content
+            tag
+          }
+          title
+          blocks {
+            ... on FlagBlockRecord {
+              id
+              _modelApiKey
+              label
+              text
+              title
+              alignReverse
+              colorsAlt
+              image {
+                responsiveImage(sizes: "(min-width: 1024px) 50vw, 100vw", imgixParams: { fit: max, w: 800, h: 800, auto: [format,compress] }) {
+                  srcSet
+                  webpSrcSet
+                  sizes
+                  src
+                  width
+                  height
+                  aspectRatio
+                  alt
+                  title
+                  base64
+                }
+              }
+            }
+            ... on TextBlockRecord {
+              id
+              _modelApiKey
+              title
+              text
+            }
           }
         }
       }
-      ... on TextBlockRecord {
-        id
-        _modelApiKey
-        title
-        text
-      }
-    }
-  }
-}`;
+    `
+  };
 
-export async function getStaticProps() {
-  const data = await request({
-    query: HOMEPAGE_QUERY
-  });
   return {
-    props: { data }
+    props: {
+      data: await request(graphqlRequest),
+    },
   };
 }
 
 export default function Home({ data }) {
-  const router = useRouter()
-  const locale = router.locale
+  const locale  = useRouter().locale;
   const site = {...data.site}
   const page = {...data.landing}
   const blocks = {...page.blocks}
