@@ -4,5 +4,8 @@ module.exports = {
     defaultLocale: 'it',
     localeDetection: false
   },
-  reactStrictMode: true
+  reactStrictMode: true,
+  images: {
+    domains: ['www.datocms-assets.com'],
+  },
 }

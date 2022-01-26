@@ -18,6 +18,9 @@ const HOMEPAGE_QUERY = `query HomePage{
       content
       tag
     }
+    globalSeo {
+      siteName
+    }
   }
   customDesign {
     logo {
