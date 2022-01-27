@@ -54,6 +54,8 @@ export async function getStaticProps({locale}) {
             green
             blue
           }
+          fontBody
+          fontHeading
         }
         landing(locale: ${formattedLocale}) {
           seo: _seoMetaTags {
