@@ -1,9 +1,10 @@
 import { Image } from "react-datocms";
+import { renderHTML } from "lib/html";
 
 export default function Flag({ block }) {
-  const image = block.image
-  const alignClass = block.alignReverse ? 'flex-row-reverse' : ''
-  const backgroundClass = block.colorsAlt ? 'bg-back-alt text-alt' : ''
+  const image = block.image;
+  const alignClass = block.alignReverse ? 'flex-row-reverse' : '';
+  const backgroundClass = block.colorsAlt ? 'bg-back-alt text-alt' : '';
 
   return (
     <section className={`${backgroundClass} py-8 lg:py-24 xl:py-36`}>
@@ -11,7 +12,7 @@ export default function Flag({ block }) {
         <div className="flex-1 my-8">
           <div className="font-bold text-xs text-accent uppercase tracking-widest my-2">{block.label}</div>
           <h2 className="font-heading font-medium uppercase text-lg my-4 xl:text-xl xl:my-6">{block.title}</h2>
-          <p className="font-heading xl:text-lg">{block.text}</p>
+          <p className="font-heading xl:text-lg">{renderHTML(block.text)}</p>
         </div>
         <div className="flex-1 my-8 lg:my-0">
           <div className="lg:px-12">
