@@ -25,7 +25,7 @@ export async function getStaticProps({locale}) {
             siteName
           }
         }
-        customDesign {
+        design: customDesign {
           logo {
             url
           }
@@ -57,7 +57,7 @@ export async function getStaticProps({locale}) {
           fontBody
           fontHeading
         }
-        landing(locale: ${formattedLocale}) {
+        page: landing(locale: ${formattedLocale}) {
           seo: _seoMetaTags {
             attributes
             content
@@ -109,20 +109,29 @@ export async function getStaticProps({locale}) {
 
 export default function Home({ data }) {
   const locale  = useRouter().locale;
-  const site = {...data.site}
-  const page = {...data.landing}
-  const blocks = {...page.blocks}
-  const design = {...data.customDesign}
+  const { site, page, design } = data;
   return (
     <div>
       <CustomCssVars data={design} />
       <Head>
         {renderMetaTags(page.seo.concat(site.favicon))}
+        {design.fontBody && (
+          <link
+            href={`https://fonts.googleapis.com/css2?family=${design.fontBody}:wght@400;700&display=swap`}
+            rel="stylesheet"
+          />
+        )}
+        {design.fontHeading && (
+          <link
+            href={`https://fonts.googleapis.com/css2?family=${design.fontHeading}:wght@400;500,700&display=swap`}
+            rel="stylesheet"
+          />
+        )}
       </Head>
 
       <Header design={design} site={site} locale={locale} />
       <main id="content">
-        <Blocks blocks={blocks} />
+        <Blocks blocks={page.blocks} />
       </main>
 
       <Footer />
