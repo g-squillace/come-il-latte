@@ -10,7 +10,13 @@ export default function Header({ site, design, locale }) {
   return (
     <header className="container flex items-center justify-between py-2 xl:py-4">
       <div className="flex-1 max-w-[160px] xl:max-w-[220px]">
-        <Image src={logoUrl} alt={`Logo ${siteName}`} width={220} height={90} layout='responsive' />
+        <Image
+          src={logoUrl}
+          alt={`Logo ${siteName}`}
+          width={220}
+          height={90}
+          layout='responsive'
+          priority='true' />
       </div>
       <nav className="flex-none">
         <ul>
