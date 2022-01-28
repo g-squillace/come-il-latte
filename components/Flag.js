@@ -12,7 +12,7 @@ export default function Flag({ block }) {
         <div className="flex-1 my-8">
           <div className="font-bold text-xs text-accent uppercase tracking-widest my-2">{block.label}</div>
           <h2 className="font-heading font-medium uppercase text-lg my-4 xl:text-xl xl:my-6">{block.title}</h2>
-          <p className="font-heading xl:text-lg">{renderHTML(block.text)}</p>
+          <div className="font-heading xl:text-lg">{renderHTML(block.text)}</div>
         </div>
         <div className="flex-1 my-8 lg:my-0">
           <div className="lg:px-12">
