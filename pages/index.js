@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { renderMetaTags } from "react-datocms";
 import { request } from "lib/datocms";
 import { useRouter } from 'next/router';
+import { setGoogleFonts } from 'lib/fonts';
 
 import CustomCssVars from 'components/CustomCssVars'
 
@@ -115,9 +116,7 @@ export default function Home({ data }) {
       <CustomCssVars data={design} />
       <Head>
         {renderMetaTags(page.seo.concat(site.favicon))}
-        {design.fontBody && design.fontHeading && (
-          <link href={`https://fonts.googleapis.com/css2?family=${design.fontBody}:wght@400;700&family=${design.fontHeading}:wght@400;500;700&display=optional`} rel="stylesheet" />
-        )}
+        {setGoogleFonts(design)}
       </Head>
 
       <Header design={design} site={site} locale={locale} />
