@@ -117,13 +117,13 @@ export default function Home({ data }) {
         {renderMetaTags(page.seo.concat(site.favicon))}
         {design.fontBody && (
           <link
-            href={`https://fonts.googleapis.com/css2?family=${design.fontBody}:wght@400;700&display=swap`}
+            href={`https://fonts.googleapis.com/css2?family=${design.fontBody}:wght@400;700&display=optional`}
             rel="stylesheet"
           />
         )}
         {design.fontHeading && (
           <link
-            href={`https://fonts.googleapis.com/css2?family=${design.fontHeading}:wght@400;500,700&display=swap`}
+            href={`https://fonts.googleapis.com/css2?family=${design.fontHeading}:wght@400;500,700&display=optional`}
             rel="stylesheet"
           />
         )}
