@@ -1,5 +1,16 @@
-export default function Cover({}) {
+import { Image } from "react-datocms";
+
+export default function Cover({ block }) {
   return (
-    <div className="aspect-[16/9] bg-accent"></div>
+    <div className="">
+      {block.images && Object.values(block.images).map((image) => (
+        <Image
+          key={image}
+          data={image.responsiveImage}
+          alt={image.alt}
+          title={image.title}
+        />
+      ))}
+    </div>
   );
 }

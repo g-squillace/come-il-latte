@@ -7,6 +7,11 @@ import Text from 'components/Text';
 
 function renderBlock(block) {
   switch (block._modelApiKey) {
+    case 'cover_block':
+      return (
+        <Cover block={block} key={block.id} />
+      );
+
     case 'flag_block':
       return (
         <Flag block={block} key={block.id} />

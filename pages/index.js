@@ -68,6 +68,16 @@ export async function getStaticProps({ locale }) {
           }
           title
           blocks {
+            ... on CoverBlockRecord {
+               id
+               _modelApiKey
+               images {
+                 id
+                 responsiveImage(sizes: "100vw", imgixParams: { fit: crop, w: 1920, h: 800, auto: [format,compress] }) {
+                   ...responsiveImageFragment
+                 }
+               }
+             }
             ... on FlagBlockRecord {
               id
               _modelApiKey
