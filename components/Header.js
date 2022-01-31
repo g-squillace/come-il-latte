@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import i18n from "../lib/i18n";
+import i18n from "lib/i18n";
 
 export default function Header({ site, design, locale }) {
-  const siteName = site.globalSeo && site.globalSeo.siteName
-  const locales = site.locales
-  const logoUrl = design.logo.url
+  const siteName = site.globalSeo && site.globalSeo.siteName;
+  const locales = site.locales;
+  const logoUrl = design.logo.url;
+  const navLabel = i18n.mainNav.label[locale];
 
   return (
     <header className="container flex items-center justify-between py-2 xl:py-4">
@@ -18,7 +19,7 @@ export default function Header({ site, design, locale }) {
           layout='responsive'
           priority='true' />
       </div>
-      <nav className="flex-none">
+      <nav className="flex-none" aria-label={navLabel}>
         <ul>
           <li>
             {locales && locales.map((l, i) => {
