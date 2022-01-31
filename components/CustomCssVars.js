@@ -1,3 +1,7 @@
+function rgbColor(color) {
+  return `${color.red} ${color.green} ${color.blue}`
+}
+
 export default function CustomCssVars({ data }) {
   const { colorText,
     colorTextAlt,
@@ -11,11 +15,11 @@ export default function CustomCssVars({ data }) {
   return (
     <style global jsx>{`
       :root {
-        --color-text: ${colorText.red} ${colorText.green} ${colorText.blue};
-        --color-text-alt: ${colorTextAlt.red} ${colorTextAlt.green} ${colorTextAlt.blue};
-        --color-back: ${colorBack.red} ${colorBack.green} ${colorBack.blue};
-        --color-back-alt: ${colorBackAlt.red} ${colorBackAlt.green} ${colorBackAlt.blue};
-        --color-accent: ${colorAccent.red} ${colorAccent.green} ${colorAccent.blue};
+        --color-text: ${rgbColor(colorText)};
+        --color-text-alt: ${rgbColor(colorTextAlt)};
+        --color-back: ${rgbColor(colorBack)};
+        --color-back-alt: ${rgbColor(colorBackAlt)};
+        --color-accent: ${rgbColor(colorAccent)};
         --font-body: ${fontBody};
         --font-heading: ${fontHeading};
       }
