@@ -14,7 +14,7 @@ export default function Focus({ block }) {
       </div>
       <div className="lg:flex lg:justify-between lg:gap-12 xl:gap-24">
         {block.elements && Object.values(block.elements).map((element) => (
-          <Widget block={element} />
+          <Widget block={element} key={element.id} />
         ))}
       </div>
     </section>

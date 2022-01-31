@@ -88,6 +88,7 @@ export async function getStaticProps({ locale }) {
               title
               text
               elements {
+                id
                 title
                 text
                 image {
