@@ -142,6 +142,8 @@ export default function Home({ data }) {
       <CustomCssVars data={design} />
       <Head>
         {renderMetaTags(page.seo.concat(site.favicon))}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin={true} />
         {setGoogleFonts(design)}
       </Head>
 
