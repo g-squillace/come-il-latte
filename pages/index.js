@@ -12,7 +12,7 @@ import Footer from 'components/Footer';
 import Blocks from 'components/Blocks';
 import SkipLinks from 'components/SkipLinks'
 
-export async function getStaticProps({locale}) {
+export async function getStaticProps({ locale }) {
   const formattedLocale = locale.split("-")[0];
   const graphqlRequest = {
     query: `
