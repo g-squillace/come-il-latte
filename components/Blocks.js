@@ -2,6 +2,7 @@ import Cover from 'components/Cover';
 import Flag from 'components/Flag';
 import Focus from 'components/Focus';
 import Hero from 'components/Hero';
+import Quote from 'components/Quote';
 import Text from 'components/Text';
 
 function renderBlock(block) {
@@ -9,6 +10,16 @@ function renderBlock(block) {
     case 'flag_block':
       return (
         <Flag block={block} key={block.id} />
+      );
+
+    case 'focus_block':
+      return (
+        <Focus block={block} key={block.id} />
+      );
+
+    case 'quote_block':
+      return (
+        <Quote block={block} key={block.id} />
       );
 
     case 'text_block':

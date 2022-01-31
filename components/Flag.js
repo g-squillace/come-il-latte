@@ -1,5 +1,5 @@
-import { Image } from "react-datocms";
 import { renderHTML } from "lib/html";
+import { Image } from "react-datocms";
 
 export default function Flag({ block }) {
   const image = block.image;

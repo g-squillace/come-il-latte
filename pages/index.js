@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import { renderMetaTags } from "react-datocms";
-import { request } from "lib/datocms";
+import { renderMetaTags } from 'react-datocms';
+import { request } from 'lib/datocms';
+import { responsiveImageFragment } from 'lib/fragments';
 import { useRouter } from 'next/router';
 import { setGoogleFonts } from 'lib/fonts';
 
@@ -77,18 +78,30 @@ export async function getStaticProps({locale}) {
               colorsAlt
               image {
                 responsiveImage(sizes: "(min-width: 1024px) 50vw, 100vw", imgixParams: { fit: max, w: 800, h: 800, auto: [format,compress] }) {
-                  srcSet
-                  webpSrcSet
-                  sizes
-                  src
-                  width
-                  height
-                  aspectRatio
-                  alt
-                  title
-                  base64
+                  ...responsiveImageFragment
                 }
               }
+            }
+            ... on FocusBlockRecord {
+              id
+              _modelApiKey
+              title
+              text
+              elements {
+                title
+                text
+                image {
+                  responsiveImage(sizes: "(min-width: 1024px) 33vw, 100vw", imgixParams: { fit: crop, w: 800, h: 800, auto: [format,compress] }) {
+                    ...responsiveImageFragment
+                  }
+                }
+              }
+            }
+            ... on QuoteBlockRecord {
+              id
+              _modelApiKey
+              text
+              authorName
             }
             ... on TextBlockRecord {
               id
@@ -99,6 +112,7 @@ export async function getStaticProps({locale}) {
           }
         }
       }
+      ${responsiveImageFragment}
     `
   };
 

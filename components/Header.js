@@ -27,7 +27,9 @@ export default function Header({ site, design, locale }) {
               }
               return (
                 <Link href="/" locale={l} key={i}>
-                  <a className="uppercase">{i18n.switchLocale.label[locale]}{" "}</a>
+                  <a className="uppercase">
+                    {i18n.switchLocale.label[locale]}{" "}
+                  </a>
                 </Link>
               )
             })}

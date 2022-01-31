@@ -1,9 +1,17 @@
-export default function Widget() {
+import { renderHTML } from "lib/html";
+import { Image } from "react-datocms";
+
+export default function Widget({ block }) {
+  const image = block.image;
   return (
     <section className="container text-center my-24 lg:my-0">
-      <div className="aspect-square bg-accent mb-6"></div>
-      <h3 className="font-heading font-medium uppercase text-lg my-4 xl:text-[25px]">Testo widget</h3>
-      <p className="text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget ultrices commodo nunc cras vitae pretium arcu sagittis lectus. Arcu, mollis et lacus aenean vestibulum, rhoncus bibendum viverra. Urna et aliquam sed ut commodo interdum id.</p>
+      <Image data={image.responsiveImage} alt={image.alt} title={image.title} />
+      <h3 className="font-heading font-medium uppercase text-lg my-4 xl:text-[25px]">
+        {block.title}
+      </h3>
+      <div className="text-xs">
+        {renderHTML(block.text)}
+      </div>
     </section>
   );
 }
