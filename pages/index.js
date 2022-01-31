@@ -9,6 +9,7 @@ import CustomCssVars from 'components/CustomCssVars'
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Blocks from 'components/Blocks';
+import SkipLinks from 'components/SkipLinks'
 
 export async function getStaticProps({locale}) {
   const formattedLocale = locale.split("-")[0];
@@ -118,6 +119,8 @@ export default function Home({ data }) {
         {renderMetaTags(page.seo.concat(site.favicon))}
         {setGoogleFonts(design)}
       </Head>
+
+      <SkipLinks locale={locale} />
 
       <Header design={design} site={site} locale={locale} />
       <main id="content">

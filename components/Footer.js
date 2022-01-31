@@ -1,6 +1,6 @@
 export default function Footer({}) {
   return (
-    <footer className="container py-6">
+    <footer id="footer" className="container py-6">
       <a
         href="https://www.cantierecreativo.net"
         target="_blank"
