@@ -143,7 +143,7 @@ export default function Home({ data }) {
       <Head>
         {renderMetaTags(page.seo.concat(site.favicon))}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={true} />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {setGoogleFonts(design)}
       </Head>
 
