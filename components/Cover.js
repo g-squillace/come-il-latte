@@ -11,8 +11,6 @@ export default function Cover({ block }) {
     <div className="container max-w-screen-2xl">
       <Swiper
         modules={[Navigation, Pagination, A11y]}
-        cssMode={true}
-        mousewheel={true}
         keyboard={true}
         navigation={true}
         pagination={{ clickable: true }}

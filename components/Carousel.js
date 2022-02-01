@@ -8,8 +8,6 @@ export default function Carousel({ block }) {
   return (
     <div className="container max-w-screen-2xl">
       <Swiper
-        cssMode={true}
-        mousewheel={true}
         keyboard={true}
         modules={[A11y]}
         slidesPerView={"auto"}
