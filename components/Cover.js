@@ -8,21 +8,23 @@ import 'swiper/css/pagination';
 
 export default function Cover({ block }) {
   return (
-    <Swiper
-      modules={[Navigation, Pagination, A11y]}
-      navigation
-      pagination={{ clickable: true }}
-      slidesPerView={1}
-    >
-      {block.images && Object.values(block.images).map((image) => (
-        <SwiperSlide key={image.id}>
-          <Image
-            data={image.responsiveImage}
-            alt={image.alt}
-            title={image.title}
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="container max-w-screen-2xl">
+      <Swiper
+        modules={[Navigation, Pagination, A11y]}
+        navigation
+        pagination={{ clickable: true }}
+        slidesPerView={1}
+      >
+        {block.images && Object.values(block.images).map((image) => (
+          <SwiperSlide key={image.id}>
+            <Image
+              data={image.responsiveImage}
+              alt={image.alt}
+              title={image.title}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 }
