@@ -1,5 +1,5 @@
 # Casadei Landings
-Next.js + Tailwind + Netlify project to create beautiful landing pages without code required.
+A Next.js + Tailwind + Netlify project to create beautiful landing pages without code required.
 
 ## Getting Started
 
