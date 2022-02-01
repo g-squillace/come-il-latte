@@ -6,7 +6,7 @@ export default function Text({ block }) {
       <h2 className="font-heading font-medium text-accent uppercase text-xl mb-6 xl:text-2xl xl:mb-12">
         {block.title}
       </h2>
-      <div className="font-heading max-w-xl xl:text-lg">
+      <div className="max-w-xl xl:text-lg">
         {renderHTML(block.text)}
       </div>
     </section>
