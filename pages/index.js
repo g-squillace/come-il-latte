@@ -68,6 +68,16 @@ export async function getStaticProps({ locale }) {
           }
           title
           blocks {
+            ... on CarouselBlockRecord {
+               id
+               _modelApiKey
+               images {
+                 id
+                 responsiveImage(sizes: "(min-width: 1024px) 50vw, 100vw", imgixParams: { fit: clip, w: 800, h: 600, auto: [format,compress] }) {
+                   ...responsiveImageFragment
+                 }
+               }
+            }
             ... on CoverBlockRecord {
                id
                _modelApiKey
@@ -77,7 +87,7 @@ export async function getStaticProps({ locale }) {
                    ...responsiveImageFragment
                  }
                }
-             }
+            }
             ... on FlagBlockRecord {
               id
               _modelApiKey

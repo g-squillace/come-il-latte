@@ -17,7 +17,6 @@ export default function Cover({ block }) {
       {block.images && Object.values(block.images).map((image) => (
         <SwiperSlide key={image.id}>
           <Image
-            key={image}
             data={image.responsiveImage}
             alt={image.alt}
             title={image.title}

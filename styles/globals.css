@@ -48,3 +48,7 @@
   height: var(--swiper-navigation-size);
   z-index: -1;
 }
+
+.slider-auto-width .swiper-slide {
+  width: auto;
+}
