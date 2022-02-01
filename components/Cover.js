@@ -9,7 +9,7 @@ export default function Cover({ block }) {
       slidesPerView={1}
     >
       {block.images && Object.values(block.images).map((image) => (
-        <SwiperSlide>
+        <SwiperSlide key={image.id}>
           <Image
             key={image}
             data={image.responsiveImage}
