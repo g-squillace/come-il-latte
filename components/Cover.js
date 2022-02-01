@@ -11,7 +11,10 @@ export default function Cover({ block }) {
     <div className="container max-w-screen-2xl">
       <Swiper
         modules={[Navigation, Pagination, A11y]}
-        navigation
+        cssMode={true}
+        mousewheel={true}
+        keyboard={true}
+        navigation={true}
         pagination={{ clickable: true }}
         slidesPerView={1}
       >
