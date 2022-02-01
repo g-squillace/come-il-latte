@@ -1,16 +1,23 @@
 import { Image } from "react-datocms";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
 
 export default function Cover({ block }) {
   return (
-    <div className="">
+    <Swiper
+      slidesPerView={1}
+    >
       {block.images && Object.values(block.images).map((image) => (
-        <Image
-          key={image}
-          data={image.responsiveImage}
-          alt={image.alt}
-          title={image.title}
-        />
+        <SwiperSlide>
+          <Image
+            key={image}
+            data={image.responsiveImage}
+            alt={image.alt}
+            title={image.title}
+          />
+        </SwiperSlide>
       ))}
-    </div>
+    </Swiper>
   );
 }
