@@ -6,7 +6,7 @@ import 'swiper/css';
 
 export default function Carousel({ block }) {
   return (
-    <div className="container max-w-screen-2xl">
+    <div className="mx-auto max-w-screen-2xl">
       <Swiper
         keyboard={true}
         modules={[A11y]}

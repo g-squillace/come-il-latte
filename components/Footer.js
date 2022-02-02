@@ -1,4 +1,4 @@
-export default function Footer({}) {
+export default function Footer({ org, style, locale }) {
   return (
     <footer id="footer" className="container py-6">
       <a

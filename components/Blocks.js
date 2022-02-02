@@ -2,7 +2,7 @@ import Carousel from 'components/Carousel';
 import Cover from 'components/Cover';
 import Flag from 'components/Flag';
 import Focus from 'components/Focus';
-import Hero from 'components/Hero';
+import HeroImage from 'components/HeroImage';
 import Quote from 'components/Quote';
 import Text from 'components/Text';
 
@@ -26,6 +26,11 @@ function renderBlock(block) {
     case 'focus_block':
       return (
         <Focus block={block} key={block.id} />
+      );
+
+    case 'hero_image_block':
+      return (
+        <HeroImage block={block} key={block.id} />
       );
 
     case 'quote_block':

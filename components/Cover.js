@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 
 export default function Cover({ block }) {
   return (
-    <div className="container max-w-screen-2xl">
+    <div className="mx-auto max-w-screen-2xl">
       <Swiper
         modules={[Navigation, Pagination, A11y]}
         keyboard={true}

@@ -2,10 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import i18n from "lib/i18n";
 
-export default function Header({ site, design, locale }) {
+export default function Header({ site, style, locale }) {
   const siteName = site.globalSeo && site.globalSeo.siteName;
   const locales = site.locales;
-  const logoUrl = design.logo.url;
+  const logoUrl = style.logo.url;
   const navLabel = i18n.mainNav.label[locale];
 
   return (
