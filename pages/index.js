@@ -28,7 +28,7 @@ export async function getStaticProps({ locale }) {
             siteName
           }
         }
-        design: customDesign {
+        style: visualStyle {
           logo {
             url
           }
@@ -74,6 +74,13 @@ export async function getStaticProps({ locale }) {
           fontXxxlHeight
           fontXxxlSize
         }
+        org: organization(locale: ${formattedLocale}) {
+          emailAddress
+          facebookUrl
+          instagramUrl
+          mailchimpId
+          phoneNumber
+          streetAddress
         }
         page: landing(locale: ${formattedLocale}) {
           seo: _seoMetaTags {
@@ -81,8 +88,17 @@ export async function getStaticProps({ locale }) {
             content
             tag
           }
-          title
-          blocks {
+          headerBlocks {
+            id
+            _modelApiKey
+            title
+            image {
+              responsiveImage(sizes: "100vw", imgixParams: { fit: clip, w: 1920, h: 800, auto: [format,compress] }) {
+                ...responsiveImageFragment
+              }
+            }
+          }
+          contentBlocks {
             ... on CarouselBlockRecord {
                id
                _modelApiKey
@@ -161,24 +177,25 @@ export async function getStaticProps({ locale }) {
 
 export default function Home({ data }) {
   const locale  = useRouter().locale;
-  const { site, page, design } = data;
+  const { site, page, organization, style } = data;
   return (
     <div>
-      <CustomCssVars data={design} />
+      <CustomCssVars data={style} />
       <Head>
         <link rel="preconnect" href="https://www.datocms-assets.com" />
         {renderMetaTags(page.seo.concat(site.favicon))}
-        {setGoogleFonts(design)}
+        {setGoogleFonts(style)}
       </Head>
 
       <SkipLinks locale={locale} />
 
-      <Header design={design} site={site} locale={locale} />
+      <Header style={style} site={site} locale={locale} />
       <main id="content">
-        <Blocks blocks={page.blocks} />
+        <Blocks blocks={page.headerBlocks} />
+        <Blocks blocks={page.contentBlocks} />
       </main>
 
-      <Footer />
+      <Footer org={organization} style={style} locale={locale} />
     </div>
   )
 }
