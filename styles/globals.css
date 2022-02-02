@@ -11,6 +11,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .skiplink {
+    @apply bg-accent text-alt sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:inline-block focus-visible:p-2 focus-visible:left-1/2 focus-visible:-translate-x-1/2
+  }
+}
+
 .swiper-pagination {
   margin-bottom: var(--swiper-margin);
 }
