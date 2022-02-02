@@ -11,6 +11,10 @@ function rgbToHex(color) {
   return "#" + componentToHex(color.red) + componentToHex(color.green) + componentToHex(color.blue);
 }
 
+function sizeToPx(size) {
+  return size + "px"
+}
+
 export default function CustomCssVars({ data }) {
   const { colorText,
     colorTextAlt,
@@ -18,7 +22,21 @@ export default function CustomCssVars({ data }) {
     colorBackAlt,
     colorAccent,
     fontBody,
-    fontHeading
+    fontHeading,
+    fontBaseHeight,
+    fontBaseSize,
+    fontLgHeight,
+    fontLgSize,
+    fontSmHeight,
+    fontXlHeight,
+    fontSmSize,
+    fontXlSize,
+    fontXsHeight,
+    fontXsSize,
+    fontXxlHeight,
+    fontXxlSize,
+    fontXxxlHeight,
+    fontXxxlSize
   } = data
 
   return (
@@ -32,6 +50,20 @@ export default function CustomCssVars({ data }) {
         --color-accent: ${rgbColor(colorAccent)};
         --font-body: ${fontBody};
         --font-heading: ${fontHeading};
+        --font-xs-size: ${sizeToPx(fontXsSize)};
+        --font-xs-height: ${sizeToPx(fontXsHeight)};
+        --font-sm-size: ${sizeToPx(fontSmSize)};
+        --font-sm-height: ${sizeToPx(fontSmHeight)};
+        --font-base-height: ${sizeToPx(fontBaseHeight)};
+        --font-base-size: ${sizeToPx(fontBaseSize)};
+        --font-lg-size: ${sizeToPx(fontLgSize)};
+        --font-lg-height: ${sizeToPx(fontLgHeight)};
+        --font-xl-size: ${sizeToPx(fontXlSize)};
+        --font-xl-height: ${sizeToPx(fontXlHeight)};
+        --font-xxl-size: ${sizeToPx(fontXxlSize)};
+        --font-xxl-height: ${sizeToPx(fontXxlHeight)};
+        --font-xxxl-size: ${sizeToPx(fontXxxlSize)};
+        --font-xxxl-height: ${sizeToPx(fontXxxlHeight)};
         --swiper-theme-color: ${rgbToHex(colorAccent)};
         --swiper-pagination-bullet-inactive-color: #ffffff;
         --swiper-pagination-bullet-inactive-opacity: 1;

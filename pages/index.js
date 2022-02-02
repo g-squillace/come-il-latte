@@ -59,6 +59,21 @@ export async function getStaticProps({ locale }) {
           }
           fontBody
           fontHeading
+          fontBaseHeight
+          fontBaseSize
+          fontLgHeight
+          fontLgSize
+          fontSmHeight
+          fontXlHeight
+          fontSmSize
+          fontXlSize
+          fontXsHeight
+          fontXsSize
+          fontXxlHeight
+          fontXxlSize
+          fontXxxlHeight
+          fontXxxlSize
+        }
         }
         page: landing(locale: ${formattedLocale}) {
           seo: _seoMetaTags {

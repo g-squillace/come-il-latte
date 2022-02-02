@@ -29,13 +29,13 @@ module.exports = {
       'body': ["var(--font-body)", 'serif']
     },
     fontSize: {
-      xs: ['14px', '24px'],
-      sm: ['16px', '20px'],
-      base: ['18px', '28px'],
-      lg: ['22px', '35px'],
-      xl: ['35px', '45px'],
-      '2xl': ['50px', '60px'],
-      '3xl': ['70px', '70px']
+      xs: ["var(--font-xs-size)", "var(--font-xs-height)"],
+      sm: ["var(--font-sm-size)", "var(--font-sm-height)"],
+      base: ["var(--font-base-size)", "var(--font-base-height)"],
+      lg: ["var(--font-lg-size)", "var(--font-lg-height)"],
+      xl: ["var(--font-xl-size)", "var(--font-xl-height)"],
+      '2xl': ["var(--font-xxl-size)", "var(--font-xxl-height)"],
+      '3xl': ["var(--font-xxxl-size)", "var(--font-xxxl-height)"]
     },
     extend: {
       letterSpacing: {
