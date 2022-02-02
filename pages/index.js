@@ -151,6 +151,7 @@ export default function Home({ data }) {
     <div>
       <CustomCssVars data={design} />
       <Head>
+        <link rel="preconnect" href="https://www.datocms-assets.com" />
         {renderMetaTags(page.seo.concat(site.favicon))}
         {setGoogleFonts(design)}
       </Head>
