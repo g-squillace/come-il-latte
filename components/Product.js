@@ -7,8 +7,9 @@ export default function Product({ block }) {
 
   return (
     <section className="py-8 lg:py-24 xl:py-36">
-      <div className={`${alignClass} container lg:flex lg:items-center lg:gap-12 xl:gap-24`}>
-        <div className="flex-1 my-8">
+      <div className={`${alignClass} xl:container lg:flex lg:items-start lg:gap-12 xl:gap-24`}>
+        <div className="flex-1 px-8 py-8 lg:py-24 lg:pl-24 relative">
+          <div className="product-bg"></div>
           <div className="font-bold text-xs text-accent uppercase tracking-widest my-2">
             {block.label}
           </div>
@@ -35,9 +36,14 @@ export default function Product({ block }) {
             ))}
           </div>
         </div>
-        <div className="flex-1 my-8 lg:my-0">
+        <div className="my-8 flex justify-center flex-1 lg:my-0">
           <div className="lg:px-12">
-            <Image data={image.responsiveImage} alt={image.alt} title={image.title} />
+            <Image
+              data={image.responsiveImage}
+              alt={image.alt}
+              title={image.title}
+              className=""
+              />
           </div>
         </div>
       </div>
