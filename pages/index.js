@@ -42,6 +42,11 @@ export async function getStaticProps({ locale }) {
             green
             blue
           }
+          colorTextRev {
+            red
+            green
+            blue
+          }
           colorBack {
             red
             green
@@ -52,7 +57,17 @@ export async function getStaticProps({ locale }) {
             green
             blue
           }
+          colorBackRev {
+            red
+            green
+            blue
+          }
           colorAccent {
+            red
+            green
+            blue
+          }
+          colorAccentRev {
             red
             green
             blue
@@ -92,6 +107,7 @@ export async function getStaticProps({ locale }) {
             id
             _modelApiKey
             title
+            alignCenter
             image {
               responsiveImage(sizes: "100vw", imgixParams: { fit: max, w: 1550, h: 650, auto: [format,compress] }) {
                 ...responsiveImageFragment
@@ -125,8 +141,8 @@ export async function getStaticProps({ locale }) {
               label
               text
               title
-              alignReverse
-              colorsAlt
+              alignRev
+              colorsRev
               image {
                 responsiveImage(sizes: "(min-width: 1024px) 50vw, 100vw", imgixParams: { fit: max, w: 800, h: 800, auto: [format,compress] }) {
                   ...responsiveImageFragment
@@ -146,6 +162,27 @@ export async function getStaticProps({ locale }) {
                   responsiveImage(sizes: "(min-width: 1024px) 33vw, 100vw", imgixParams: { fit: crop, w: 800, h: 800, auto: [format,compress] }) {
                     ...responsiveImageFragment
                   }
+                }
+              }
+            }
+            ... on ProductBlockRecord {
+              id
+              _modelApiKey
+              label
+              title
+              text
+              subTitle
+              subText
+              alignRev
+              image {
+                responsiveImage(sizes: "(min-width: 1024px) 50vw, 100vw", imgixParams: { fit: max, w: 800, h: 800, auto: [format,compress] }) {
+                  ...responsiveImageFragment
+                }
+              }
+              smallImages {
+                id
+                responsiveImage(sizes: "100vw", imgixParams: { fit: max, w: 200, h: 200, auto: [format,compress] }) {
+                  ...responsiveImageFragment
                 }
               }
             }

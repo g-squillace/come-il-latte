@@ -3,7 +3,7 @@
 @layer base {
   body {
     @apply font-body;
-    @apply text-primary;
+    @apply text-base;
     @apply bg-back;
   }
 }
@@ -13,7 +13,7 @@
 
 @layer components {
   .skiplink {
-    @apply bg-accent text-alt sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:inline-block focus-visible:p-2 focus-visible:left-1/2 focus-visible:-translate-x-1/2
+    @apply bg-back-rev text-rev sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:inline-block focus-visible:p-2 focus-visible:left-1/2 focus-visible:-translate-x-1/2
   }
 }
 

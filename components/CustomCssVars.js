@@ -18,9 +18,12 @@ function sizeToPx(size) {
 export default function CustomCssVars({ data }) {
   const { colorText,
     colorTextAlt,
+    colorTextRev,
     colorBack,
     colorBackAlt,
+    colorBackRev,
     colorAccent,
+    colorAccentRev,
     fontBody,
     fontHeading,
     fontBaseHeight,
@@ -45,9 +48,12 @@ export default function CustomCssVars({ data }) {
         --color-white: 255 255 255;
         --color-text: ${rgbColor(colorText)};
         --color-text-alt: ${rgbColor(colorTextAlt)};
+        --color-text-rev: ${rgbColor(colorTextRev)};
         --color-back: ${rgbColor(colorBack)};
         --color-back-alt: ${rgbColor(colorBackAlt)};
+        --color-back-rev: ${rgbColor(colorBackRev)};
         --color-accent: ${rgbColor(colorAccent)};
+        --color-accent-rev: ${rgbColor(colorAccentRev)};
         --font-body: ${fontBody};
         --font-heading: ${fontHeading};
         --font-xs-size: ${sizeToPx(fontXsSize)};

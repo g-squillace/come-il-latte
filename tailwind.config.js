@@ -32,11 +32,14 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: withOpacityValue('--color-text'),
+        base: withOpacityValue('--color-text'),
         alt: withOpacityValue('--color-text-alt'),
-        accent: withOpacityValue('--color-accent'),
+        rev: withOpacityValue('--color-text-rev'),
         back: withOpacityValue('--color-back'),
-        'back-alt': withOpacityValue('--color-back-alt')
+        'back-alt': withOpacityValue('--color-back-alt'),
+        'back-rev': withOpacityValue('--color-back-rev'),
+        accent: withOpacityValue('--color-accent'),
+        'accent-rev': withOpacityValue('--color-accent-rev'),
       },
       letterSpacing: {
         widest: '.25em'

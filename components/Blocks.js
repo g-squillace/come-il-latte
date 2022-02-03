@@ -3,6 +3,7 @@ import Cover from 'components/Cover';
 import Flag from 'components/Flag';
 import Focus from 'components/Focus';
 import HeroImage from 'components/HeroImage';
+import Product from 'components/Product';
 import Quote from 'components/Quote';
 import Text from 'components/Text';
 
@@ -31,6 +32,11 @@ function renderBlock(block) {
     case 'hero_image_block':
       return (
         <HeroImage block={block} key={block.id} />
+      );
+
+    case 'product_block':
+      return (
+        <Product block={block} key={block.id} />
       );
 
     case 'quote_block':

@@ -16,7 +16,7 @@ export default function Carousel({ block }) {
       >
         {block.images && Object.values(block.images).map((image) => (
           <SwiperSlide key={image.id}>
-            <div className="max-w-[60vw] h-72 md:h-96 lg:h-160">
+            <div className="max-w-[60vw] h-72 md:h-96 lg:h-128 xl:h-160">
               <Image
                 key={image}
                 data={image.responsiveImage}

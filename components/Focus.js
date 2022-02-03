@@ -8,7 +8,7 @@ export default function Focus({ block }) {
         <h2 className="font-heading font-medium text-accent uppercase text-xl mb-6 xl:text-2xl xl:mb-12">
           {block.title}
         </h2>
-        <div className="font-heading xl:text-lg">
+        <div className="xl:text-lg">
           {renderHTML(block.text)}
         </div>
       </div>
