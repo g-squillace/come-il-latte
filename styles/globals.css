@@ -15,12 +15,16 @@
   .skiplink {
     @apply bg-back-rev text-rev sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:inline-block focus-visible:p-2 focus-visible:left-1/2 focus-visible:-translate-x-1/2
   }
-  .product-bg {
-    @apply absolute inset-0 bg-back-rev/10
+  .product-bg:before,
+  .product-bg-rev:before {
+    @apply content-[''] absolute inset-0 bg-back-rev/10 -top-full
   }
   @media screen(lg) {
-    .product-bg {
-      right: -100%;
+    .product-bg:before {
+      @apply -right-full top-0
+    }
+    .product-bg-rev:before {
+      @apply -left-full top-0
     }
   }
 }
