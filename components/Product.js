@@ -9,7 +9,7 @@ export default function Product({ block }) {
   return (
     <section className="my-8 lg:my-24 xl:my-36">
       <div className={`${alignClass} xl:container flex flex-col-reverse lg:items-start`}>
-        <div className={`${contentClass} container flex-1 px-8 py-8 lg:py-24 lg:pl-24 relative lg:flex-auto lg:w-1/2`}>
+        <div className={`${contentClass} container flex-1 px-8 py-8 relative lg:py-24 lg:pl-24 lg:flex-auto lg:w-1/2`}>
           <div className="font-bold text-xs text-accent uppercase tracking-widest my-2">
             {block.label}
           </div>
