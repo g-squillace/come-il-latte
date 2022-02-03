@@ -8,8 +8,8 @@ export default function Product({ block }) {
 
   return (
     <section className="my-8 lg:my-24 xl:my-36">
-      <div className={`${alignClass} xl:container flex flex-col-reverse lg:items-start lg:gap-12 xl:gap-24`}>
-        <div className={`${contentClass} flex-1 px-8 py-8 lg:py-24 lg:pl-24 relative`}>
+      <div className={`${alignClass} xl:container flex flex-col-reverse lg:items-start`}>
+        <div className={`${contentClass} container flex-1 px-8 py-8 lg:py-24 lg:pl-24 relative lg:flex-auto lg:w-1/2`}>
           <div className="font-bold text-xs text-accent uppercase tracking-widest my-2">
             {block.label}
           </div>
@@ -19,12 +19,16 @@ export default function Product({ block }) {
           <div className="my-3 text-alt">
             {renderHTML(block.text)}
           </div>
-          <h3 className="font-medium uppercase text-sm my-3">
-            {block.subTitle}
-          </h3>
-          <div className="my-3 text-alt">
-            {renderHTML(block.subText)}
-          </div>
+          {block.subTitle && (
+            <h3 className="font-medium uppercase text-sm my-3">
+              {block.subTitle}
+            </h3>
+          )}
+          {block.subText && (
+            <div className="my-3 text-alt">
+              {renderHTML(block.subText)}
+            </div>
+          )}
           <div>
             {block.smallImages && Object.values(block.smallImages).map((smallImage) => (
               <Image
@@ -36,7 +40,7 @@ export default function Product({ block }) {
             ))}
           </div>
         </div>
-        <div className="my-8 flex justify-center flex-1 lg:my-0">
+        <div className="my-8 flex justify-center flex-1 lg:my-0 lg:flex-auto lg:w-1/2">
           <div className="lg:px-12">
             <Image
               data={image.responsiveImage}
