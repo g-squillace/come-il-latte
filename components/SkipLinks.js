@@ -6,7 +6,7 @@ export default function Skiplinks({ locale }) {
       <a href="#content" className="skiplink">
         {i18n.skipLinks.content[locale]}{" "}
       </a>
-      <a href="#footer" className="bg-accent text-alt sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:inline-block focus-visible:p-2 focus-visible:left-1/2 focus-visible:-translate-x-1/2">
+      <a href="#footer" className="skiplink">
         {i18n.skipLinks.footer[locale]}{" "}
       </a>
     </div>

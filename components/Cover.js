@@ -22,6 +22,9 @@ export default function Cover({ block }) {
               data={image.responsiveImage}
               alt={image.alt}
               title={image.title}
+              layout="responsive"
+              objectFit="cover"
+              className="h-96 h-72 md:h-96 lg:h-160"
             />
           </SwiperSlide>
         ))}

@@ -13,13 +13,6 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: {
-      primary: withOpacityValue('--color-text'),
-      alt: withOpacityValue('--color-text-alt'),
-      accent: withOpacityValue('--color-accent'),
-      back: withOpacityValue('--color-back'),
-      'back-alt': withOpacityValue('--color-back-alt')
-    },
     container: {
       center: true,
       padding: '2rem'
@@ -38,9 +31,20 @@ module.exports = {
       '3xl': ["var(--font-xxxl-size)", "var(--font-xxxl-height)"]
     },
     extend: {
+      colors: {
+        primary: withOpacityValue('--color-text'),
+        alt: withOpacityValue('--color-text-alt'),
+        accent: withOpacityValue('--color-accent'),
+        back: withOpacityValue('--color-back'),
+        'back-alt': withOpacityValue('--color-back-alt')
+      },
       letterSpacing: {
         widest: '.25em'
       },
+      spacing: {
+        '128': '32rem',
+        '160': '40rem',
+      }
     },
   },
   plugins: [],

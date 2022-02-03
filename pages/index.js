@@ -93,7 +93,7 @@ export async function getStaticProps({ locale }) {
             _modelApiKey
             title
             image {
-              responsiveImage(sizes: "100vw", imgixParams: { fit: clip, w: 1920, h: 800, auto: [format,compress] }) {
+              responsiveImage(sizes: "100vw", imgixParams: { fit: max, w: 1550, h: 650, auto: [format,compress] }) {
                 ...responsiveImageFragment
               }
             }
@@ -114,7 +114,7 @@ export async function getStaticProps({ locale }) {
                _modelApiKey
                images {
                  id
-                 responsiveImage(sizes: "100vw", imgixParams: { fit: crop, w: 1920, h: 800, auto: [format,compress] }) {
+                 responsiveImage(sizes: "100vw", imgixParams: { fit: crop, w: 1550, h: 800, auto: [format,compress] }) {
                    ...responsiveImageFragment
                  }
                }
