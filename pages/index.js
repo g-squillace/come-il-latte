@@ -1,16 +1,16 @@
 import Head from 'next/head'
-import { renderMetaTags } from 'react-datocms';
-import { request } from 'lib/datocms';
-import { responsiveImageFragment } from 'lib/fragments';
 import { useRouter } from 'next/router';
+import { request } from 'lib/datocms';
+import { blockSetupFields, colorFields, responsiveImageFragment } from 'lib/fragments';
+import { renderMetaTags } from 'react-datocms';
 import { setGoogleFonts } from 'lib/fonts';
 
 import CustomCssVars from 'components/CustomCssVars'
 
+import SkipLinks from 'components/SkipLinks'
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Blocks from 'components/Blocks';
-import SkipLinks from 'components/SkipLinks'
 
 export async function getStaticProps({ locale }) {
   const formattedLocale = locale.split("-")[0];
@@ -33,44 +33,28 @@ export async function getStaticProps({ locale }) {
             url
           }
           colorText {
-            red
-            green
-            blue
+            ${colorFields}
           }
           colorTextAlt {
-            red
-            green
-            blue
+            ${colorFields}
           }
           colorTextRev {
-            red
-            green
-            blue
+            ${colorFields}
           }
           colorBack {
-            red
-            green
-            blue
+            ${colorFields}
           }
           colorBackAlt {
-            red
-            green
-            blue
+            ${colorFields}
           }
           colorBackRev {
-            red
-            green
-            blue
+            ${colorFields}
           }
           colorAccent {
-            red
-            green
-            blue
+            ${colorFields}
           }
           colorAccentRev {
-            red
-            green
-            blue
+            ${colorFields}
           }
           fontBody
           fontHeading
@@ -104,8 +88,7 @@ export async function getStaticProps({ locale }) {
             tag
           }
           headerBlocks {
-            id
-            _modelApiKey
+            ${blockSetupFields}
             title
             alignCenter
             image {
@@ -116,8 +99,7 @@ export async function getStaticProps({ locale }) {
           }
           contentBlocks {
             ... on CarouselBlockRecord {
-               id
-               _modelApiKey
+               ${blockSetupFields}
                images {
                  id
                  responsiveImage(sizes: "(min-width: 1024px) 50vw, 100vw", imgixParams: { fit: clip, w: 1200, h: 600, auto: [format,compress] }) {
@@ -126,8 +108,7 @@ export async function getStaticProps({ locale }) {
                }
             }
             ... on CoverBlockRecord {
-               id
-               _modelApiKey
+               ${blockSetupFields}
                images {
                  id
                  responsiveImage(sizes: "100vw", imgixParams: { fit: crop, w: 1550, h: 800, auto: [format,compress] }) {
@@ -136,8 +117,7 @@ export async function getStaticProps({ locale }) {
                }
             }
             ... on FlagBlockRecord {
-              id
-              _modelApiKey
+              ${blockSetupFields}
               label
               text
               title
@@ -150,8 +130,7 @@ export async function getStaticProps({ locale }) {
               }
             }
             ... on FocusBlockRecord {
-              id
-              _modelApiKey
+              ${blockSetupFields}
               title
               text
               elements {
@@ -166,8 +145,7 @@ export async function getStaticProps({ locale }) {
               }
             }
             ... on ProductBlockRecord {
-              id
-              _modelApiKey
+              ${blockSetupFields}
               label
               title
               text
@@ -187,14 +165,12 @@ export async function getStaticProps({ locale }) {
               }
             }
             ... on QuoteBlockRecord {
-              id
-              _modelApiKey
+              ${blockSetupFields}
               text
               authorName
             }
             ... on TextBlockRecord {
-              id
-              _modelApiKey
+              ${blockSetupFields}
               title
               text
             }
