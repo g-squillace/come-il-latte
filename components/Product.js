@@ -27,6 +27,7 @@ export default function Product({ block }) {
           <div>
             {block.smallImages && Object.values(block.smallImages).map((smallImage) => (
               <Image
+                key={smallImage.id}
                 data={smallImage.responsiveImage}
                 alt={smallImage.alt}
                 title={smallImage.title}
