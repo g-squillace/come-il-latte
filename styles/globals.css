@@ -29,3 +29,45 @@
     }
   }
 }
+
+.swiper-pagination {
+  margin-bottom: var(--swiper-margin);
+}
+
+.swiper-button-next, .swiper-button-prev {
+  margin: var(--swiper-margin);
+  width: var(--swiper-navigation-size);
+  height: var(--swiper-navigation-size);
+}
+
+.swiper-button-next:after,.swiper-button-prev:after {
+  font-size: 0 !important;
+  display: block;
+  border: solid var(--swiper-theme-color);
+  border-width: 0 calc(var(--swiper-navigation-size) / 12) calc(var(--swiper-navigation-size) / 12) 0;
+  padding: calc(var(--swiper-navigation-size) / 12);
+}
+
+.swiper-button-next:after {
+  transform: rotate(-45deg) translateX(-15%) translateY(-10%);
+}
+
+.swiper-button-prev:after {
+  transform: rotate(135deg) translateX(-20%) translateY(-10%);
+}
+
+.swiper-button-next:before, .swiper-button-prev:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(var(--color-white));
+  opacity: .4;
+  width: var(--swiper-navigation-size);
+  height: var(--swiper-navigation-size);
+  z-index: -1;
+}
+
+.slider-auto-width .swiper-slide {
+  width: auto;
+}
