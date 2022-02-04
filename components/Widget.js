@@ -9,7 +9,7 @@ export default function Widget({ block }) {
       <h3 className="font-heading font-medium uppercase text-lg my-4 xl:text-[25px]">
         {block.title}
       </h3>
-      <div className="text-xs">
+      <div className="text-sm">
         {renderHTML(block.text)}
       </div>
     </section>

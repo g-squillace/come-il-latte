@@ -14,7 +14,7 @@ export default function Flag({ block }) {
           <div className={`${labelClass} font-bold text-xs uppercase tracking-widest my-2`}>
             {block.label}
           </div>
-          <h2 className="font-heading font-medium uppercase text-lg my-4 xl:text-xl xl:my-6">
+          <h2 className="font-heading font-medium uppercase text-xl my-4 xl:text-2xl xl:my-6">
             {block.title}
           </h2>
           <div className="xl:text-lg">{renderHTML(block.text)}</div>
