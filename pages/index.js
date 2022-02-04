@@ -189,17 +189,17 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function Home({ data }) {
-  const locale  = useRouter().locale;
+  const locale = useRouter().locale;
   const { site, page, organization, style } = data;
   return (
-    <div>
-      <CustomCssVars data={style} />
+    <>
       <Head>
+        {setGoogleFonts(style)}
         <link rel="preconnect" href="https://www.datocms-assets.com" />
         {renderMetaTags(page.seo.concat(site.favicon))}
-        {setGoogleFonts(style)}
       </Head>
 
+      <CustomCssVars data={style} />
       <SkipLinks locale={locale} />
 
       <Header style={style} site={site} locale={locale} />
@@ -209,6 +209,6 @@ export default function Home({ data }) {
       </main>
 
       <Footer org={organization} style={style} locale={locale} />
-    </div>
+    </>
   )
 }
