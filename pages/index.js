@@ -195,7 +195,6 @@ export default function Home({ data }) {
     <>
       <Head>
         {setGoogleFonts(style)}
-        <link rel="preconnect" href="https://www.datocms-assets.com" />
         {renderMetaTags(page.seo.concat(site.favicon))}
       </Head>
 
