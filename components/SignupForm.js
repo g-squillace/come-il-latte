@@ -24,7 +24,7 @@ export default function SignupForm({ url, locale }) {
     <form onSubmit={registerUser}>
       <div className="my-2">
         <label
-          for="email"
+          htmlFor="email"
           className="sr-only"
         >
           Email
@@ -40,7 +40,7 @@ export default function SignupForm({ url, locale }) {
       </div>
       <div className="my-2">
         <button
-          class="inline-flex items-center font-bold py-2 px-4 rounded -ml-4 after:m-2 after:h-2 after:w-2 after:block after:border-solid after:border-accent after:border-l-2 after:border-t-2 after:rotate-[135deg]"
+          className="button-arrow"
           type="submit">
           {i18n.newsletter.button[locale]}
         </button>
