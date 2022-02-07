@@ -17,7 +17,9 @@ export default function Header({ site, style, locale }) {
           width={220}
           height={90}
           layout='responsive'
-          priority='true' />
+          priority='true'
+          className=""
+        />
       </div>
       <nav className="flex-none" aria-label={navLabel}>
         <ul>
