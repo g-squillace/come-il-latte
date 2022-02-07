@@ -20,6 +20,7 @@
   .product-bg-rev:before {
     @apply -z-10 content-[''] absolute inset-0 bg-back-rev/10 -top-full
   }
+  
   @media screen(lg) {
     .product-bg:before {
       @apply -right-full top-0
