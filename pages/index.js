@@ -159,7 +159,7 @@ export async function getStaticProps({ locale }) {
               }
               smallImages {
                 id
-                responsiveImage(sizes: "100vw", imgixParams: { fit: max, w: 200, h: 200, auto: [format,compress] }) {
+                responsiveImage(sizes: "100vw", imgixParams: { fit: clip, h: 70, auto: [format,compress] }) {
                   ...responsiveImageFragment
                 }
               }
