@@ -77,7 +77,7 @@ export async function getStaticProps({ locale }) {
           emailAddress
           facebookUrl
           instagramUrl
-          mailchimpId
+          newsletterFormUrl
           phoneNumber
           streetAddress
         }
@@ -190,7 +190,7 @@ export async function getStaticProps({ locale }) {
 
 export default function Home({ data }) {
   const locale = useRouter().locale;
-  const { site, page, organization, style } = data;
+  const { site, page, org, style } = data;
   return (
     <>
       <Head>
@@ -202,12 +202,17 @@ export default function Home({ data }) {
       <SkipLinks locale={locale} />
 
       <Header style={style} site={site} locale={locale} />
-      <main id="content">
+      <main id="content" style={{display: 'none'}}>
         <Blocks blocks={page.headerBlocks} />
         <Blocks blocks={page.contentBlocks} />
       </main>
 
-      <Footer org={organization} style={style} locale={locale} />
+      <Footer
+        org={org}
+        style={style}
+        site={site}
+        locale={locale}
+      />
     </>
   )
 }

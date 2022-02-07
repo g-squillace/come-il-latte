@@ -1,0 +1,50 @@
+import i18n from "lib/i18n";
+
+export default function SignupForm({ url, locale }) {
+  const registerUser = async event => {
+    event.preventDefault()
+
+    const res = await fetch(
+      url,
+      {
+        body: JSON.stringify({
+          name: event.target.email.value
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST'
+      }
+    )
+
+    const result = await res.json()
+  }
+
+  return (
+    <form onSubmit={registerUser}>
+      <div className="my-2">
+        <label
+          for="email"
+          className="sr-only"
+        >
+          Email
+        </label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder={i18n.newsletter.placeholder[locale]}
+          required={true}
+          className="w-full bg-transparent border-solid border-alt border-[1px] caret-accent appearance-none p-4"
+        />
+      </div>
+      <div className="my-2">
+        <button
+          class="inline-flex items-center font-bold py-2 px-4 rounded -ml-4 after:m-2 after:h-2 after:w-2 after:block after:border-solid after:border-accent after:border-l-2 after:border-t-2 after:rotate-[135deg]"
+          type="submit">
+          {i18n.newsletter.button[locale]}
+        </button>
+      </div>
+    </form>
+  )
+}
