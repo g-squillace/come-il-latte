@@ -4,13 +4,13 @@ export default function GoogleAnalytics({ id }) {
       <script
         async={true}
         type="plain/text"
-        class="_iub_cs_activate"
+        className="_iub_cs_activate"
         data-iub-purposes="4"
         src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
       />
       <script
         type="plain/text"
-        class="_iub_cs_activate"
+        className="_iub_cs_activate"
         data-iub-purposes="4"
         dangerouslySetInnerHTML={{__html: `
           window.dataLayer = window.dataLayer || [];
