@@ -19,7 +19,11 @@ export default function FacebookPixel({ id }) {
           `,
         }}
       />
-      <noscript>
+      <noscript
+        type="text/plain"
+        className="_iub_cs_activate"
+        data-iub-purposes="5"
+      >
         <img
           height="1"
           width="1"
