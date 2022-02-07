@@ -202,7 +202,7 @@ export default function Home({ data }) {
       <SkipLinks locale={locale} />
 
       <Header style={style} site={site} locale={locale} />
-      <main id="content" style={{display: 'none'}}>
+      <main id="content">
         <Blocks blocks={page.headerBlocks} />
         <Blocks blocks={page.contentBlocks} />
       </main>
