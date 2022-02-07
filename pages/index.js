@@ -12,6 +12,10 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Blocks from 'components/Blocks';
 
+import Iubenda from 'components/Iubenda';
+import GoogleAnalytics from 'components/GoogleAnalytics';
+import FacebookPixel from 'components/FacebookPixel';
+
 export async function getStaticProps({ locale }) {
   const formattedLocale = locale.split("-")[0];
   const graphqlRequest = {
@@ -80,6 +84,10 @@ export async function getStaticProps({ locale }) {
           newsletterFormUrl
           phoneNumber
           streetAddress
+          facebookPixelId
+          googleTagId
+          iubendaPolicyId
+          iubendaSiteId
         }
         page: landing(locale: ${formattedLocale}) {
           seo: _seoMetaTags {
@@ -200,8 +208,8 @@ export default function Home({ data }) {
 
       <CustomCssVars data={style} />
       <SkipLinks locale={locale} />
-
       <Header style={style} site={site} locale={locale} />
+
       <main id="content">
         <Blocks blocks={page.headerBlocks} />
         <Blocks blocks={page.contentBlocks} />
@@ -213,6 +221,20 @@ export default function Home({ data }) {
         site={site}
         locale={locale}
       />
+
+      <Iubenda
+        siteId={org.iubendaSiteId}
+        policyId={org.iubendaPolicyId}
+        locale={locale}
+      />
+      
+      {org.googleTagId && (
+        <GoogleAnalytics id={org.googleTagId} />
+      )}
+
+      {org.facebookPixelId && (
+        <FacebookPixel id={org.facebookPixelId} />
+      )}
     </>
   )
 }
