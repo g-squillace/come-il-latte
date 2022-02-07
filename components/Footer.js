@@ -117,6 +117,22 @@ export default function Footer({ org, style, site, locale }) {
           target="_blank"
           rel="noreferrer noopener"
         >Design & Develop by Cantiere Creativo</a>
+        {" - "}
+        <a
+          href={`https://www.iubenda.com/privacy-policy/${org.iubendaPolicyId}`}
+          className="iubenda-nostyle no-brand iubenda-noiframe iubenda-embed"
+          title="Privacy Policy"
+        >
+          Privacy Policy
+        </a>
+        {" - "}
+        <a
+          href={`https://www.iubenda.com/privacy-policy/${org.iubendaPolicyId}/cookie-policy`}
+          className="iubenda-nostyle no-brand iubenda-noiframe iubenda-embed"
+          title="Privacy Policy"
+        >
+          Cookie Policy
+        </a>
       </div>
     </footer>
   );
