@@ -13,7 +13,7 @@ export default function Product({ block }) {
           <div className="font-bold text-xs text-accent uppercase tracking-widest my-2">
             {block.label}
           </div>
-          <h2 className="font-heading font-medium uppercase text-xl my-4">
+          <h2 className="font-heading font-medium uppercase break-words text-xl my-4">
             {block.title}
           </h2>
           <div className="my-3 text-alt">
@@ -29,16 +29,18 @@ export default function Product({ block }) {
               {renderHTML(block.subText)}
             </div>
           )}
-          <div>
-            {block.smallImages && Object.values(block.smallImages).map((smallImage) => (
-              <Image
-                key={smallImage.id}
-                data={smallImage.responsiveImage}
-                alt={smallImage.alt}
-                title={smallImage.title}
-              />
-            ))}
-          </div>
+          {block.smallImages && (
+            <div className="flex gap-8 mt-6">
+              {Object.values(block.smallImages).map((smallImage) => (
+                <Image
+                  key={smallImage.id}
+                  data={smallImage.responsiveImage}
+                  alt={smallImage.alt}
+                  title={smallImage.title}
+                />
+              ))}
+            </div>
+          )}
         </div>
         <div className="my-8 flex justify-center flex-1 lg:my-0 lg:flex-auto lg:w-1/2">
           <div className="lg:px-12">

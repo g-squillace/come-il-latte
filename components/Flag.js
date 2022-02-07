@@ -14,14 +14,20 @@ export default function Flag({ block }) {
           <div className={`${labelClass} font-bold text-xs uppercase tracking-widest my-2`}>
             {block.label}
           </div>
-          <h2 className="font-heading font-medium uppercase text-xl my-4 xl:text-2xl xl:my-6">
+          <h2 className="font-heading font-medium break-words uppercase text-xl my-4 xl:text-2xl xl:my-6">
             {block.title}
           </h2>
-          <div className="xl:text-lg">{renderHTML(block.text)}</div>
+          <div className="xl:text-lg">
+            {renderHTML(block.text)}
+          </div>
         </div>
         <div className="flex-1 my-8 lg:my-0">
           <div className="lg:px-12">
-            <Image data={image.responsiveImage} alt={image.alt} title={image.title} />
+            <Image
+              data={image.responsiveImage}
+              alt={image.alt}
+              title={image.title}
+            />
           </div>
         </div>
       </div>
