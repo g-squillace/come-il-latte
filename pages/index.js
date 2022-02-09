@@ -225,6 +225,7 @@ export default function Home({ data }) {
       <Iubenda
         siteId={org.iubendaSiteId}
         policyId={org.iubendaPolicyId}
+        style={style}
         locale={locale}
       />
 
