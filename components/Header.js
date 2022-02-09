@@ -16,7 +16,6 @@ export default function Header({ site, style, locale }) {
           alt={`Logo ${siteName}`}
           width={220}
           height={90}
-          layout='responsive'
           priority='true'
           className=""
         />

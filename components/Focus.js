@@ -12,7 +12,7 @@ export default function Focus({ block }) {
           {renderHTML(block.text)}
         </div>
       </div>
-      <div className="lg:flex lg:justify-between lg:gap-12 xl:gap-24">
+      <div className="lg:flex lg:justify-between lg:gap-12 xl:gap-18">
         {block.elements && Object.values(block.elements).map((element) => (
           <Widget block={element} key={element.id} />
         ))}

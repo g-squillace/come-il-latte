@@ -13,7 +13,7 @@ export default function Product({ block }) {
           <div className="font-bold text-xs text-accent uppercase tracking-widest my-2">
             {block.label}
           </div>
-          <h2 className="font-heading font-medium uppercase break-words text-xl my-4">
+          <h2 className="font-heading font-medium uppercase text-alt break-words text-xl xl:text-2xl my-4">
             {block.title}
           </h2>
           <div className="my-3 text-alt">
@@ -43,12 +43,12 @@ export default function Product({ block }) {
           )}
         </div>
         <div className="my-8 flex justify-center flex-1 lg:my-0 lg:flex-auto lg:w-1/2">
-          <div className="lg:px-12">
+          <div className="lg:px-12 w-48 mx-auto text-center md:w-60 lg:w-full">
             <Image
               data={image.responsiveImage}
               alt={image.alt}
               title={image.title}
-              className=""
+              className="inline-block"
               />
           </div>
         </div>

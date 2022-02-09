@@ -22,7 +22,7 @@
 
   .product-bg:before,
   .product-bg-rev:before {
-    @apply -z-10 content-[''] absolute inset-0 bg-back-rev/10 -top-full
+    @apply -z-10 content-[''] absolute inset-0 bg-back-rev/10 -top-[33vh]
   }
 
   @media screen(lg) {

@@ -161,7 +161,7 @@ export async function getStaticProps({ locale }) {
               subText
               alignRev
               image {
-                responsiveImage(sizes: "(min-width: 1024px) 50vw, 100vw", imgixParams: { fit: max, w: 800, h: 800, auto: [format,compress] }) {
+                responsiveImage(sizes: "(min-width: 1024px) 50vw, 80vw", imgixParams: { fit: max, h: 800, auto: [format,compress] }) {
                   ...responsiveImageFragment
                 }
               }
@@ -227,7 +227,7 @@ export default function Home({ data }) {
         policyId={org.iubendaPolicyId}
         locale={locale}
       />
-      
+
       {org.googleTagId && (
         <GoogleAnalytics id={org.googleTagId} />
       )}
