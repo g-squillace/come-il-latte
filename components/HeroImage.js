@@ -11,7 +11,7 @@ export default function HeroImage({ block }) {
         title={image.title}
         layout="responsive"
         objectFit="cover"
-        className="w-full h-72 md:h-96 lg:h-128 xl:h-160"
+        className="cover"
       />
       <div className="absolute z-20 inset-x-0 bottom-0 container">
         <h1 className={`${alignClass} max-w-[17ch] font-medium font-heading uppercase text-white py-4 text-xl lg:py-8 lg:text-2xl xl:text-3xl`}>
