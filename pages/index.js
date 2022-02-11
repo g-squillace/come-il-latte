@@ -126,6 +126,7 @@ export async function getStaticProps({ locale }) {
             }
             ... on FlagBlockRecord {
               ${blockSetupFields}
+              menuLabel
               label
               text
               title
@@ -139,6 +140,7 @@ export async function getStaticProps({ locale }) {
             }
             ... on FocusBlockRecord {
               ${blockSetupFields}
+              menuLabel
               title
               text
               elements {
@@ -179,6 +181,7 @@ export async function getStaticProps({ locale }) {
             }
             ... on TextBlockRecord {
               ${blockSetupFields}
+              menuLabel
               title
               text
             }
@@ -199,6 +202,7 @@ export async function getStaticProps({ locale }) {
 export default function Home({ data }) {
   const locale = useRouter().locale;
   const { site, page, org, style } = data;
+
   return (
     <>
       <Head>
@@ -208,7 +212,12 @@ export default function Home({ data }) {
 
       <CustomCssVars data={style} />
       <SkipLinks locale={locale} />
-      <Header style={style} site={site} locale={locale} />
+      <Header
+        page={page}
+        style={style}
+        site={site}
+        locale={locale}
+      />
 
       <main id="content">
         <Blocks blocks={page.headerBlocks} />

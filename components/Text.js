@@ -1,8 +1,12 @@
 import { renderHTML } from "lib/html";
+import { anchorId } from "lib/anchors";
 
 export default function Text({ block }) {
   return (
-    <section className="container py-12 lg:py-24 xl:py-36">
+    <section
+      id={anchorId(block)}
+      className="container scroll-mt-20 py-12 lg:py-24 xl:py-36"
+    >
       <h2 className="font-heading font-medium text-accent uppercase text-xl mb-6 xl:text-2xl xl:mb-12">
         {block.title}
       </h2>

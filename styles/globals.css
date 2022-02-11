@@ -16,8 +16,13 @@
     @apply bg-back-rev text-rev sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:inline-block focus-visible:p-2 focus-visible:left-1/2 focus-visible:-translate-x-1/2
   }
 
+  .button,
   .button-arrow {
-    @apply inline-flex items-center font-medium py-2 px-4 rounded -ml-4 after:m-2 after:h-2 after:w-2 after:block after:border-solid after:border-accent after:border-l-2 after:border-t-2 after:rotate-[135deg]
+    @apply inline-flex items-center font-medium py-2 px-4 rounded
+  }
+
+  .button-arrow {
+    @apply -ml-4 after:m-2 after:h-2 after:w-2 after:block after:border-solid after:border-accent after:border-l-2 after:border-t-2 after:rotate-[135deg]
   }
 
   .product-bg:before,
