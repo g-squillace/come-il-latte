@@ -1,10 +1,11 @@
 @tailwind base;
 
 @layer base {
+  html {
+    @apply motion-safe:scroll-smooth
+  }
   body {
-    @apply font-body;
-    @apply text-base;
-    @apply bg-back;
+    @apply font-body text-base bg-back
   }
 }
 
