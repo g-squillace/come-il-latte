@@ -40,7 +40,7 @@ export default function SignupForm({ url, locale }) {
       </div>
       <div className="my-2">
         <button
-          className="button-arrow"
+          className="button-arrow -ml-4"
           type="submit">
           {i18n.newsletter.button[locale]}
         </button>

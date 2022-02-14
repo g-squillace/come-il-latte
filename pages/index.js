@@ -95,6 +95,7 @@ export async function getStaticProps({ locale }) {
             content
             tag
           }
+          _locales
           headerBlocks {
             ${blockSetupFields}
             title
