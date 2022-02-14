@@ -82,6 +82,8 @@ export async function getStaticProps({ locale }) {
           facebookUrl
           instagramUrl
           newsletterFormUrl
+          newsletterTitle
+          newsletterLabel
           phoneNumber
           streetAddress
           facebookPixelId
