@@ -98,12 +98,16 @@ export default function Footer({ org, style, site, locale }) {
         </div>
         {newsletterFormUrl && (
           <section className="flex-1 my-12">
-            <div className="font-bold text-xs uppercase text-accent tracking-widest my-2">
-              org.newsletterLabel
-            </div>
-            <h2 className="font-heading font-medium break-words uppercase text-alt text-lg my-4 xl:text-xl xl:my-6">
-              org.newsletterTitle
-            </h2>
+            {org.newsletterLabel && (
+              <div className="font-bold text-xs uppercase text-accent tracking-widest my-2">
+                {org.newsletterLabel}
+              </div>
+            )}
+            {org.newsletterTitle && (
+              <h2 className="font-heading font-medium break-words uppercase text-alt text-lg my-4 xl:text-xl xl:my-6">
+                {org.newsletterTitle}
+              </h2>
+            )}
             <SignupForm
               url={newsletterFormUrl}
               locale={locale}
