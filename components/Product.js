@@ -37,6 +37,7 @@ export default function Product({ block }) {
                   data={smallImage.responsiveImage}
                   alt={smallImage.alt}
                   title={smallImage.title}
+                  usePlaceholder={false}
                 />
               ))}
             </div>
@@ -49,7 +50,8 @@ export default function Product({ block }) {
               alt={image.alt}
               title={image.title}
               className="inline-block"
-              />
+              usePlaceholder={false}
+            />
           </div>
         </div>
       </div>

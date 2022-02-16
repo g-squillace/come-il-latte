@@ -9,6 +9,7 @@ export default function Widget({ block }) {
         data={image.responsiveImage}
         alt={image.alt}
         title={image.title}
+        usePlaceholder={false}
       />
       <h3 className="font-heading font-medium uppercase break-words text-alt text-lg my-4 xl:text-[25px]">
         {block.title}

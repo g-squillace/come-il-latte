@@ -27,6 +27,7 @@ export default function Flag({ block }) {
               data={image.responsiveImage}
               alt={image.alt}
               title={image.title}
+              usePlaceholder={false}
             />
           </div>
         </div>
