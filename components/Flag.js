@@ -1,5 +1,6 @@
 import { renderHTML } from "lib/html";
 import { Image } from "react-datocms";
+import { useInView } from 'react-intersection-observer';
 
 export default function Flag({ block }) {
   const image = block.image;
@@ -7,10 +8,17 @@ export default function Flag({ block }) {
   const labelClass = block.colorsRev ? 'text-accent-rev' : 'text-accent'
   const colorsClass = block.colorsRev ? 'bg-back-rev text-rev' : 'text-alt';
 
+  const { ref, inView, entry } = useInView({
+    threshold: 0.2,
+    triggerOnce: true
+  });
+
+  const inViewClass = inView ? 'translate-y-0 opacity-100' : 'opacity-0 -translate-y-6'
+
   return (
-    <section className={`${colorsClass} py-8 lg:py-24 xl:py-36`}>
+    <section className={`${colorsClass} py-8 lg:py-24 xl:py-36`} ref={ref}>
       <div className={`${alignClass} container lg:flex lg:items-center lg:gap-12 xl:gap-24`}>
-        <div className="flex-1 my-8">
+        <div ref={ref} className={`${inViewClass} transition-all duration-500 delay-200 flex-1 my-8`}>
           <div className={`${labelClass} font-bold text-xs uppercase tracking-widest my-2`}>
             {block.label}
           </div>

@@ -1,14 +1,22 @@
 import { renderHTML } from "lib/html";
 import { anchorId } from "lib/anchors";
 import Widget from 'components/Widget';
+import { useInView } from 'react-intersection-observer';
 
 export default function Focus({ block }) {
+  const { ref, inView, entry } = useInView({
+    threshold: 0.2,
+    triggerOnce: true
+  });
+
+  const inViewClass = inView ? 'translate-y-0 opacity-100' : 'opacity-0 -translate-y-6'
+
   return (
     <section
       id={anchorId(block)}
       className="container scroll-mt-20 py-12 lg:py-24 xl:py-36"
     >
-      <div className="max-w-xl mx-auto text-center mb-12 lg:mb-24 xl:mb-36">
+      <div ref={ref} className={`${inViewClass} transition-all duration-500 delay-200 max-w-xl mx-auto text-center mb-12`}>
         <h2 className="font-heading font-medium text-accent break-words uppercase text-2xl mb-6 xl:text-2xl xl:mb-12">
           {block.title}
         </h2>
