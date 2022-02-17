@@ -8,13 +8,13 @@ export default function Text({ block }) {
     triggerOnce: true
   });
 
-  const inViewClass = inView ? 'translate-y-0 opacity-100' : 'opacity-0 -translate-y-6'
+  const inViewClass = inView ? 'opacity-100' : '-translate-y-6'
 
   return (
     <section
       id={anchorId(block)}
       ref={ref}
-      className={`${inViewClass} transition-all duration-500 delay-200 container scroll-mt-20 py-12 lg:py-24 xl:py-36`}
+      className={`${inViewClass} container scroll-mt-20 transition-opacity duration-500 delay-200 py-12 lg:py-24 xl:py-36`}
     >
       <h2 className="font-heading font-medium text-accent uppercase text-xl mb-6 xl:text-2xl xl:mb-12">
         {block.title}
