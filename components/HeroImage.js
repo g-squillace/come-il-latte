@@ -3,14 +3,14 @@ import { Image } from "react-datocms";
 export default function HeroImage({ block }) {
   const image = block.image;
   const alignClass = block.alignCenter ? 'text-center mx-auto ' : '';
-  
+
   return (
     <header className="mx-auto max-w-screen-2xl relative after:absolute after:z-10 after:inset-0 after:bg-gradient-to-t after:from-black/60">
       <Image
         data={image.responsiveImage}
         alt={image.alt}
         title={image.title}
-        layout="responsive"
+        layout="fill"
         objectFit="cover"
         className="cover"
       />

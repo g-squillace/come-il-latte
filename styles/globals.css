@@ -35,10 +35,6 @@
     @apply h-72 md:h-96 lg:h-128 xl:h-160
   }
 
-  .cover img {
-    height: 100%;
-  }
-
   @media screen(lg) {
     .product-bg:before {
       @apply -right-full top-0
