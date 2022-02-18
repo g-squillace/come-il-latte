@@ -47,6 +47,17 @@
       @apply -left-full top-0
     }
   }
+  .fade-down {
+    @apply transition-all duration-700 delay-200
+  }
+
+  .fade-down-on {
+    @apply opacity-100 translate-y-6
+  }
+
+  .fade-down-off {
+    @apply opacity-0 translate-y-0
+  }
 }
 
 .swiper-pagination {

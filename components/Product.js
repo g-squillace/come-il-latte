@@ -12,12 +12,15 @@ export default function Product({ block }) {
     triggerOnce: true
   });
 
-  const inViewClass = inView ? 'opacity-100' : '-translate-y-6'
+  const inViewClass = inView ? 'fade-down-on' : 'fade-down-off'
 
   return (
     <section className="my-8 lg:my-24 xl:my-36">
       <div className={`${alignClass} xl:container flex flex-col-reverse lg:items-start`}>
-        <div className={`${contentClass} ${inViewClass} transition-opacity duration-500 delay-200 container flex-1 px-8 py-8 relative lg:py-24 lg:pl-24 lg:flex-auto lg:w-1/2`}>
+        <div
+          ref={ref}
+          className={`${contentClass} ${inViewClass} fade-down container flex-1 px-8 py-8 relative lg:py-24 lg:pl-24 lg:flex-auto lg:w-1/2`}
+        >
           <div className="font-bold text-xs text-accent uppercase tracking-widest my-2">
             {block.label}
           </div>

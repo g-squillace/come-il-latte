@@ -6,12 +6,13 @@ export default function Quote({ block }) {
     triggerOnce: true
   });
 
-  const inViewClass = inView ? 'opacity-100' : 'opacity-0'
+  const inViewClass = inView ? 'fade-down-on' : 'fade-down-off'
 
   return (
     <section
       ref={ref}
-      className={`${inViewClass} transition-opacity duration-500 delay-200 container text-center relative mt-12 py-20 lg:mt-24 lg:py-36 before:content-['“'] before:text-accent before:absolute before:text-[6rem] before:leading-none before:left-1/2 before:-translate-x-1/2 before:-top-0 lg:before:text-[10rem]`}>
+      className={`${inViewClass} fade-down container text-center relative mt-12 py-20 lg:mt-24 lg:py-36 before:content-['“'] before:text-accent before:absolute before:text-[6rem] before:leading-none before:left-1/2 before:-translate-x-1/2 before:-top-0 lg:before:text-[10rem]`}
+    >
       <div className="font-heading italic text-alt max-w-prose mx-auto mb-6 lg:text-lg xl:mb-12">
         {block.text}
       </div>

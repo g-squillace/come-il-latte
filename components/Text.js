@@ -4,17 +4,17 @@ import { useInView } from 'react-intersection-observer';
 
 export default function Text({ block }) {
   const { ref, inView, entry } = useInView({
-    threshold: 0.2,
+    threshold: 0.1,
     triggerOnce: true
   });
 
-  const inViewClass = inView ? 'opacity-100' : 'opacity-0'
+  const inViewClass = inView ? 'fade-down-on' : 'fade-down-off'
 
   return (
     <section
       id={anchorId(block)}
       ref={ref}
-      className={`${inViewClass} container scroll-mt-20 transition-opacity duration-500 delay-200 py-12 lg:py-24 xl:py-36`}
+      className={`${inViewClass} fade-down container scroll-mt-20 py-12 lg:py-24 xl:py-36`}
     >
       <h2 className="font-heading font-medium text-accent uppercase text-xl mb-6 xl:text-2xl xl:mb-12">
         {block.title}

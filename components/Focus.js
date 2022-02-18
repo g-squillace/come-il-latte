@@ -9,14 +9,14 @@ export default function Focus({ block }) {
     triggerOnce: true
   });
 
-  const inViewClass = inView ? 'opacity-100' : 'opacity-0'
+  const inViewClass = inView ? 'fade-down-on' : 'fade-down-off'
 
   return (
     <section
       id={anchorId(block)}
       className="container scroll-mt-20 py-12 lg:py-24 xl:py-36"
     >
-      <div ref={ref} className={`${inViewClass} transition-opacity duration-500 delay-200 max-w-xl mx-auto text-center mb-12`}>
+      <div ref={ref} className={`${inViewClass} fade-down max-w-xl mx-auto text-center mb-12`}>
         <h2 className="font-heading font-medium text-accent break-words uppercase text-2xl mb-6 xl:text-2xl xl:mb-12">
           {block.title}
         </h2>
