@@ -3,7 +3,7 @@ import Link from 'next/link';
 import i18n from "lib/i18n";
 import slugify from '@sindresorhus/slugify';
 
-export default function Header({ site, style, org, page, locale }) {
+export default function Header({ site, visual, org, page, locale }) {
   const locales = page._locales;
   const { contactsMenuLabel } = org;
 
@@ -15,7 +15,7 @@ export default function Header({ site, style, org, page, locale }) {
       <div className="container flex items-center justify-between py-2 xl:py-4">
         <div className="flex-1 flex items-center max-w-[160px] xl:max-w-[220px]">
           <Image
-            src={style.logo.url}
+            src={visual.logo.url}
             alt={`Logo ${site.globalSeo && site.globalSeo.siteName}`}
             width={220}
             height={90}

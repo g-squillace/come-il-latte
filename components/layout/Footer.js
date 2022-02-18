@@ -3,7 +3,7 @@ import { renderHTML } from "lib/html";
 import i18n from "lib/i18n";
 import SignupForm from 'components/SignupForm';
 
-export default function Footer({ org, style, site, locale }) {
+export default function Footer({ org, visual, site, locale }) {
   const {
     emailAddress,
     facebookUrl,
@@ -21,7 +21,7 @@ export default function Footer({ org, style, site, locale }) {
         <div className="flex-1 my-12">
           <div>
             <Image
-              src={style.logo.url}
+              src={visual.logo.url}
               alt={`Logo ${site.globalSeo && site.globalSeo.siteName}`}
               width={220}
               height={90}

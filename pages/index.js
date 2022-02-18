@@ -31,7 +31,7 @@ export async function getStaticProps({ locale }) {
             siteName
           }
         }
-        style: visualStyle {
+        visual: visualStyle {
           logo {
             url
           }
@@ -204,20 +204,20 @@ export async function getStaticProps({ locale }) {
 
 export default function Home({ data }) {
   const locale = useRouter().locale;
-  const { site, page, org, style } = data;
+  const { site, page, org, visual } = data;
 
   return (
     <>
       <Head>
-        {setGoogleFonts(style)}
+        {setGoogleFonts(visual)}
         {renderMetaTags(page.seo.concat(site.favicon))}
       </Head>
 
-      <CustomCssVars data={style} />
+      <CustomCssVars data={visual} />
       <SkipLinks locale={locale} />
       <Header
         page={page}
-        style={style}
+        visual={visual}
         site={site}
         org={org}
         locale={locale}
@@ -230,7 +230,7 @@ export default function Home({ data }) {
 
       <Footer
         org={org}
-        style={style}
+        visual={visual}
         site={site}
         locale={locale}
       />
@@ -238,7 +238,7 @@ export default function Home({ data }) {
       <Iubenda
         siteId={org.iubendaSiteId}
         policyId={org.iubendaPolicyId}
-        style={style}
+        visual={visual}
         locale={locale}
       />
 

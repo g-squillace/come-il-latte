@@ -1,8 +1,8 @@
 import Script from "next/script";
 
-export default function Iubenda({ siteId, policyId, style, locale }) {
-  const buttonTextColor = style.colorTextRev.hex
-  const buttonBackColor = style.colorAccent.hex
+export default function Iubenda({ siteId, policyId, visual, locale }) {
+  const buttonTextColor = visual.colorTextRev.hex
+  const buttonBackColor = visual.colorAccent.hex
   return (
     <>
       <Script
@@ -40,8 +40,8 @@ export default function Iubenda({ siteId, policyId, style, locale }) {
               "customizeButtonCaptionColor":"${buttonTextColor}",
               "rejectButtonColor":"${buttonBackColor}",
               "rejectButtonCaptionColor":"${buttonTextColor}",
-              "textColor":"${style.colorText.hex}",
-              "backgroundColor":"${style.colorBack.hex}",
+              "textColor":"${visual.colorText.hex}",
+              "backgroundColor":"${visual.colorBack.hex}",
               "rejectButtonDisplay":true,
               "closeButtonRejects":true
             },
