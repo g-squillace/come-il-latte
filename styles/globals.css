@@ -48,15 +48,15 @@
     }
   }
   .fade-down {
-    @apply transition-all duration-700 delay-200
+    @apply transition-all duration-700 delay-100
   }
 
   .fade-down-on {
-    @apply opacity-100 translate-y-6
+    @apply opacity-100 translate-y-0
   }
 
   .fade-down-off {
-    @apply opacity-0 translate-y-0
+    @apply opacity-0 -translate-y-6
   }
 }
 
