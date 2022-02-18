@@ -57,7 +57,7 @@ export default function Footer({ org, style, site, locale }) {
                     href={facebookUrl}
                     target="_blank"
                     rel="noreferrer noopener"
-                    title="Facebook"
+                    title={`${i18n.linkExternal.label[locale]} Facebook`}
                   >
                     <svg
                       className="w-6 h-6 fill-current"
@@ -79,7 +79,7 @@ export default function Footer({ org, style, site, locale }) {
                     href={instagramUrl}
                     target="_blank"
                     rel="noreferrer noopener"
-                    title="Instagram"
+                    title={`${i18n.linkExternal.label[locale]} Instagram`}
                   >
                     <svg
                       className="w-6 h-6 fill-current"
@@ -120,6 +120,7 @@ export default function Footer({ org, style, site, locale }) {
           href="https://www.cantierecreativo.net"
           target="_blank"
           rel="noreferrer noopener"
+          title={`${i18n.linkExternal.label[locale]} Cantiere Creativo`}
         >Design & Develop by Cantiere Creativo</a>
         {" - "}
         <a
