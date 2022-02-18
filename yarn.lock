@@ -51,9 +51,9 @@
     regenerator-runtime "^0.13.4"
 
 "@babel/runtime@^7.12.5":
-  version "7.17.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.0.tgz#b8d142fc0f7664fb3d9b5833fd40dcbab89276c0"
-  integrity sha512-etcO/ohMNaNA2UBdaXBBSX/3aEzFMRrVfaPv8Ptc0k+cWpWW0QFiGZ2XnVqQZI1Cf734LbPGmqBKWESfW4x/dQ==
+  version "7.17.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.2.tgz#66f68591605e59da47523c631416b18508779941"
+  integrity sha512-hzeyJyMA1YGdJTuWU0e/j4wKXrU4OMFvY2MSlaI9B7VQb0r5cxTE3EAIS2Q7Tn2RIcDkRvTA/v2JsAEhxe99uw==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -2187,9 +2187,9 @@ quick-lru@^5.1.1:
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
 react-datocms@^3.0.4:
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/react-datocms/-/react-datocms-3.0.8.tgz#a5c0920ae48a17ec0538656f5be021dc3d7a0b3a"
-  integrity sha512-rsD+EjhTnpq9LwM1YrH/GrDD0RtPCJR15xSjPs8rMyLCeeAueJcMBW53yu33sl+oAquRQBmFoRA8qfe8gbYwHg==
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/react-datocms/-/react-datocms-3.0.9.tgz#43b824a8ae2c0635fd61da64895ca6010748f54a"
+  integrity sha512-/x04yC/RMlIMBpgUWnJ0cwxy7/iF63sFlsG+wiRgCgGfG/L+DkR5IDpR7rWzOyldG8qxdl8h7BzrpCymSanXQw==
   dependencies:
     datocms-listen "^0.1.7"
     datocms-structured-text-generic-html-renderer "^2.0.1"
