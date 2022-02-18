@@ -2,15 +2,6 @@ function rgbColor(color) {
   return `${color.red} ${color.green} ${color.blue}`
 }
 
-function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
-}
-
-function rgbToHex(color) {
-  return "#" + componentToHex(color.red) + componentToHex(color.green) + componentToHex(color.blue);
-}
-
 function sizeToPx(size) {
   return size + "px"
 }
@@ -70,7 +61,7 @@ export default function CustomCssVars({ data }) {
         --font-xxl-height: ${sizeToPx(fontXxlHeight)};
         --font-xxxl-size: ${sizeToPx(fontXxxlSize)};
         --font-xxxl-height: ${sizeToPx(fontXxxlHeight)};
-        --swiper-theme-color: ${rgbToHex(colorAccent)};
+        --swiper-theme-color: ${colorAccent.hex};
         --swiper-pagination-bullet-inactive-color: #ffffff;
         --swiper-pagination-bullet-inactive-opacity: 1;
         --swiper-navigation-size: 2.5rem;
