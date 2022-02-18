@@ -28,7 +28,7 @@ export default function FacebookPixel({ id }) {
           height="1"
           width="1"
           alt=""
-          style="display:none"
+          style={{display: 'none'}}
           src={`https://www.facebook.com/tr?id=${id}&ev=PageView&noscript=1`}
         />
       </noscript>
