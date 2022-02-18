@@ -46,16 +46,18 @@ export default function Header({ site, style, page, locale }) {
                   </a>
                 </li>
               ))}
-              <li
-                className="flex-none"
-              >
-                <a
-                  className="button uppercase text-sm"
-                  href={`#footer`}
+              {contactsMenuLabel && (
+                <li
+                  className="flex-none"
                 >
-                  {i18n.mainNav.contactUs[locale]}
-                </a>
-              </li>
+                  <a
+                    className="button uppercase text-sm"
+                    href={`#footer`}
+                  >
+                    {contactsMenuLabel}
+                  </a>
+                </li>
+              )}
             </ul>
           </nav>
         )}
