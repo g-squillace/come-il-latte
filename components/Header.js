@@ -22,7 +22,6 @@ export default function Header({ site, style, page, locale }) {
             width={220}
             height={90}
             priority='true'
-            className=""
           />
         </div>
         {menuItems && (
