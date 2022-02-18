@@ -4,9 +4,6 @@ import i18n from "lib/i18n";
 import SignupForm from 'components/SignupForm';
 
 export default function Footer({ org, style, site, locale }) {
-  const logoUrl = style.logo.url;
-  const siteName = site.globalSeo && site.globalSeo.siteName;
-
   const {
     emailAddress,
     facebookUrl,
@@ -24,8 +21,8 @@ export default function Footer({ org, style, site, locale }) {
         <div className="flex-1 my-12">
           <div>
             <Image
-              src={logoUrl}
-              alt={`Logo ${siteName}`}
+              src={style.logo.url}
+              alt={`Logo ${site.globalSeo && site.globalSeo.siteName}`}
               width={220}
               height={90}
             />
@@ -115,7 +112,7 @@ export default function Footer({ org, style, site, locale }) {
           </section>
         )}
       </div>
-      <div className="text-center py-6">
+      <div className="text-center py-6 text-sm">
         <a
           href="https://www.cantierecreativo.net"
           target="_blank"

@@ -1,11 +1,11 @@
-import Carousel from 'components/Carousel';
-import Cover from 'components/Cover';
-import Flag from 'components/Flag';
-import Focus from 'components/Focus';
-import HeroImage from 'components/HeroImage';
-import Product from 'components/Product';
-import Quote from 'components/Quote';
-import Text from 'components/Text';
+import HeroImage from 'components/headers/HeroImage';
+import Carousel from 'components/blocks/Carousel';
+import Cover from 'components/blocks/Cover';
+import Flag from 'components/blocks/Flag';
+import Focus from 'components/blocks/Focus';
+import Product from 'components/blocks/Product';
+import Quote from 'components/blocks/Quote';
+import Text from 'components/blocks/Text';
 
 function renderBlock(block) {
   switch (block._modelApiKey) {

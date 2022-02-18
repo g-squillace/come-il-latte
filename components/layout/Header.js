@@ -3,12 +3,10 @@ import Link from 'next/link';
 import i18n from "lib/i18n";
 import slugify from '@sindresorhus/slugify';
 
-export default function Header({ site, style, page, locale }) {
-  const siteName = site.globalSeo && site.globalSeo.siteName;
+export default function Header({ site, style, org, page, locale }) {
   const locales = page._locales;
-  const logoUrl = style.logo.url;
-  const mainNavLabel = i18n.mainNav.label[locale];
-  const localeNavLabel = i18n.localeNav.label[locale];
+  const { contactsMenuLabel } = org;
+
   const menuItems = page.contentBlocks.map(({ menuLabel }) => menuLabel)
     .filter(e => e)
 
@@ -17,8 +15,8 @@ export default function Header({ site, style, page, locale }) {
       <div className="container flex items-center justify-between py-2 xl:py-4">
         <div className="flex-1 flex items-center max-w-[160px] xl:max-w-[220px]">
           <Image
-            src={logoUrl}
-            alt={`Logo ${siteName}`}
+            src={style.logo.url}
+            alt={`Logo ${site.globalSeo && site.globalSeo.siteName}`}
             width={220}
             height={90}
             priority='true'
@@ -26,7 +24,7 @@ export default function Header({ site, style, page, locale }) {
         </div>
         {menuItems && (
           <nav
-            aria-label={mainNavLabel}
+            aria-label={i18n.mainNav.label[locale]}
             className="hidden lg:block flex-1"
           >
             <ul
@@ -63,7 +61,7 @@ export default function Header({ site, style, page, locale }) {
         {locales.length >= 1 && (
           <nav
             className="flex-none"
-            aria-label={localeNavLabel}
+            aria-label={i18n.localeNav.label[locale]}
           >
             <ul
               className="flex items-center gap-5"
@@ -76,7 +74,7 @@ export default function Header({ site, style, page, locale }) {
                   return (
                     <Link href="/" locale={l} key={i}>
                       <a className="button-arrow uppercase text-sm">
-                        {i18n.switchLocale.label[locale]}{" "}
+                        {i18n.switchLocale.label[locale]}
                       </a>
                     </Link>
                   )

@@ -5,16 +5,15 @@ import { blockSetupFields, colorFields, responsiveImageFragment } from 'lib/frag
 import { renderMetaTags } from 'react-datocms';
 import { setGoogleFonts } from 'lib/fonts';
 
-import CustomCssVars from 'components/CustomCssVars'
+import CustomCssVars from 'components/layout/CustomCssVars';
+import SkipLinks from 'components/layout/SkipLinks';
+import Header from 'components/layout/Header';
+import Footer from 'components/layout/Footer';
+import Blocks from 'components/layout/Blocks';
 
-import SkipLinks from 'components/SkipLinks'
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Blocks from 'components/Blocks';
-
-import Iubenda from 'components/Iubenda';
-import GoogleAnalytics from 'components/GoogleAnalytics';
-import FacebookPixel from 'components/FacebookPixel';
+import Iubenda from 'components/scripts/Iubenda';
+import GoogleAnalytics from 'components/scripts/GoogleAnalytics';
+import FacebookPixel from 'components/scripts/FacebookPixel';
 
 export async function getStaticProps({ locale }) {
   const formattedLocale = locale.split("-")[0];
@@ -220,6 +219,7 @@ export default function Home({ data }) {
         page={page}
         style={style}
         site={site}
+        org={org}
         locale={locale}
       />
 

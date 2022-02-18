@@ -1,6 +1,6 @@
 import { renderHTML } from "lib/html";
 import { anchorId } from "lib/anchors";
-import Widget from 'components/Widget';
+import Widget from 'components/blocks/Widget';
 import { useInView } from 'react-intersection-observer';
 
 export default function Focus({ block }) {
