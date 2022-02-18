@@ -8,7 +8,7 @@ export default function Text({ block }) {
     triggerOnce: true
   });
 
-  const inViewClass = inView ? 'opacity-100' : '-translate-y-6'
+  const inViewClass = inView ? 'opacity-100' : 'opacity-0'
 
   return (
     <section
