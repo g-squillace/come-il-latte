@@ -55,7 +55,7 @@ export default function Product({ block }) {
           )}
         </div>
         <div className="my-8 flex justify-center flex-1 lg:my-0 lg:flex-auto lg:w-1/2">
-          <div className="lg:px-12 w-48 mx-auto text-center md:w-60 lg:w-full">
+          <div className="w-48 mx-auto text-center md:w-60 lg:w-full lg:px-12 lg:pt-6">
             <Image
               data={image.responsiveImage}
               alt={image.alt}
