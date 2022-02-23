@@ -1,8 +1,9 @@
 import { renderHTML } from "lib/html";
+import { uppercaseClass } from 'lib/visual';
 import { Image } from "react-datocms";
 import { useInView } from 'react-intersection-observer';
 
-export default function Product({ block }) {
+export default function Product({ block, visual }) {
   const image = block.image;
   const alignClass = block.alignRev ? 'lg:flex-row-reverse' : 'lg:flex-row';
   const contentClass = block.alignRev ? 'product-bg-rev' : 'product-bg';
@@ -24,7 +25,7 @@ export default function Product({ block }) {
           <div className="font-bold text-xs text-accent uppercase tracking-widest my-2">
             {block.label}
           </div>
-          <h2 className="font-heading font-medium uppercase text-alt break-words text-xl xl:text-2xl my-4">
+          <h2 className={`${uppercaseClass(visual)} font-heading font-medium text-alt break-words text-xl xl:text-2xl my-4`}>
             {block.title}
           </h2>
           <div className="my-3 text-alt">

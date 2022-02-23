@@ -1,8 +1,9 @@
 import { renderHTML } from "lib/html";
+import { uppercaseClass } from 'lib/visual';
 import { Image } from "react-datocms";
 import { useInView } from 'react-intersection-observer';
 
-export default function Widget({ block }) {
+export default function Widget({ block, visual }) {
   const image = block.image;
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
@@ -23,7 +24,7 @@ export default function Widget({ block }) {
         ref={ref}
         className={`${inViewClass} fade-down`}
       >
-        <h3 className="font-heading font-medium uppercase break-words text-alt text-lg my-4 xl:text-[25px]">
+        <h3 className={`${uppercaseClass(visual)} font-heading font-medium uppercase break-words text-alt text-lg my-4 xl:text-[25px]`}>
           {block.title}
         </h3>
         <div className="text-sm">

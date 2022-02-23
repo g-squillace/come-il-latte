@@ -7,54 +7,83 @@ import Product from 'components/blocks/Product';
 import Quote from 'components/blocks/Quote';
 import Text from 'components/blocks/Text';
 
-function renderBlock(block) {
+function renderBlock(block, visual) {
   switch (block._modelApiKey) {
     case 'carousel_block':
       return (
-        <Carousel block={block} key={block.id} />
+        <Carousel
+          block={block}
+          key={block.id}
+        />
       );
 
     case 'cover_block':
       return (
-        <Cover block={block} key={block.id} />
+        <Cover
+          block={block}
+          key={block.id}
+        />
       );
 
     case 'flag_block':
       return (
-        <Flag block={block} key={block.id} />
+        <Flag
+          block={block}
+          visual={visual}
+          key={block.id}
+        />
       );
 
     case 'focus_block':
       return (
-        <Focus block={block} key={block.id} />
+        <Focus
+          block={block}
+          visual={visual}
+          key={block.id}
+        />
       );
 
     case 'hero_image_block':
       return (
-        <HeroImage block={block} key={block.id} />
+        <HeroImage
+          block={block}
+          visual={visual}
+          key={block.id}
+        />
       );
 
     case 'product_block':
       return (
-        <Product block={block} key={block.id} />
+        <Product
+          block={block}
+          visual={visual}
+          key={block.id}
+        />
       );
 
     case 'quote_block':
       return (
-        <Quote block={block} key={block.id} />
+        <Quote
+          block={block}
+          key={block.id}
+        />
       );
 
     case 'text_block':
       return (
-        <Text block={block} key={block.id} />
+        <Text
+          block={block}
+          visual={visual}
+          key={block.id}
+        />
       );
   }
 }
 
-export default function Blocks({ blocks }) {
+export default function Blocks({ blocks, visual }) {
   return (
     blocks && Object.values(blocks).map((block) => (
-      renderBlock(block)
+      renderBlock(block, visual)
     ))
   );
 }

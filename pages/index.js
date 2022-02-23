@@ -35,6 +35,7 @@ export async function getStaticProps({ locale }) {
           logo {
             url
           }
+          uppercaseTitles
           colorText {
             ${colorFields}
           }
@@ -226,8 +227,14 @@ export default function Home({ data }) {
       />
 
       <main id="content">
-        <Blocks blocks={page.headerBlocks} />
-        <Blocks blocks={page.contentBlocks} />
+        <Blocks
+          blocks={page.headerBlocks}
+          visual={visual}
+        />
+        <Blocks
+          blocks={page.contentBlocks}
+          visual={visual}
+        />
       </main>
 
       <Footer
