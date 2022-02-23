@@ -13,7 +13,7 @@ export default function Product({ block, visual }) {
     triggerOnce: true
   });
 
-  const inViewClass = inView ? 'fade-down-on' : 'fade-down-off'
+  const inViewClass = inView ? 'fade-down-on' : 'fade-down-off';
 
   return (
     <section className="my-8 lg:my-24 xl:my-36">

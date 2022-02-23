@@ -6,7 +6,7 @@ export default function Quote({ block }) {
     triggerOnce: true
   });
 
-  const inViewClass = inView ? 'fade-down-on' : 'fade-down-off'
+  const inViewClass = inView ? 'fade-down-on' : 'fade-down-off';
 
   return (
     <section

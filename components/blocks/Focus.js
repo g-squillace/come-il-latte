@@ -10,7 +10,7 @@ export default function Focus({ block, visual }) {
     triggerOnce: true
   });
 
-  const inViewClass = inView ? 'fade-down-on' : 'fade-down-off'
+  const inViewClass = inView ? 'fade-down-on' : 'fade-down-off';
 
   return (
     <section

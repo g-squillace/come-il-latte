@@ -10,7 +10,7 @@ export default function Widget({ block, visual }) {
     triggerOnce: true
   });
 
-  const inViewClass = inView ? 'fade-down-on' : 'fade-down-off'
+  const inViewClass = inView ? 'fade-down-on' : 'fade-down-off';
 
   return (
     <section className="container text-center my-12 lg:my-0">
