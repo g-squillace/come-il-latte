@@ -18,7 +18,7 @@ export default function Flag({ block }) {
   return (
     <section
       ref={ref}
-      className={`${colorsClass} py-8 lg:py-24 xl:py-36`}
+      className={`${colorsClass} my-8 lg:my-24 xl:my-36`}
     >
       <div className={`${alignClass} container lg:flex lg:items-center lg:gap-12 xl:gap-24`}>
         <div ref={ref} className={`${inViewClass} fade-down flex-1 my-8`}>

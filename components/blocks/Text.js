@@ -14,7 +14,7 @@ export default function Text({ block }) {
     <section
       id={anchorId(block)}
       ref={ref}
-      className={`${inViewClass} fade-down container scroll-mt-20 py-12 lg:py-24 xl:py-36`}
+      className={`${inViewClass} fade-down container scroll-mt-20 my-12 lg:my-24 xl:my-36`}
     >
       <h2 className="font-heading font-medium text-accent uppercase text-xl mb-6 xl:text-2xl xl:mb-12">
         {block.title}
