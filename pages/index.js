@@ -102,6 +102,7 @@ export async function getStaticProps({ locale }) {
             ${blockSetupFields}
             title
             alignCenter
+            hideTitle
             image {
               responsiveImage(sizes: "100vw", imgixParams: { fit: max, w: 1550, h: 850, auto: [format,compress] }) {
                 ...responsiveImageFragment
