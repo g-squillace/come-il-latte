@@ -187,6 +187,7 @@ export async function getStaticProps({ locale }) {
               menuLabel
               title
               text
+              alignCenter
             }
           }
         }
