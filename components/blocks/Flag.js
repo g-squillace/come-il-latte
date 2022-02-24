@@ -8,6 +8,7 @@ export default function Flag({ block, visual }) {
   const alignClass = block.alignRev ? 'flex-row-reverse' : '';
   const labelClass = block.colorsRev ? 'text-accent-rev' : 'text-accent'
   const colorsClass = block.colorsRev ? 'bg-back-rev text-rev' : 'text-alt';
+  const spacingClass = block.colorsRev ? 'py-8 lg:py-24 xl:py-36' : 'my-8 lg:my-24 xl:my-36'
 
   const { ref, inView, entry } = useInView({
     threshold: 0.2,
@@ -19,7 +20,7 @@ export default function Flag({ block, visual }) {
   return (
     <section
       ref={ref}
-      className={`${colorsClass} my-8 lg:my-24 xl:my-36`}
+      className={`${colorsClass} ${spacingClass}`}
     >
       <div className={`${alignClass} container lg:flex lg:items-center lg:gap-12 xl:gap-24`}>
         <div ref={ref} className={`${inViewClass} fade-down flex-1 my-8`}>
