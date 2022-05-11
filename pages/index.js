@@ -238,6 +238,7 @@ export default function Home({ data }) {
         <Blocks
           blocks={page.contentBlocks}
           visual={visual}
+          locale={locale}
         />
       </main>
 

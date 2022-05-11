@@ -7,7 +7,7 @@ import Product from 'components/blocks/Product';
 import Quote from 'components/blocks/Quote';
 import Text from 'components/blocks/Text';
 
-function renderBlock(block, visual) {
+function renderBlock(block, visual, locale) {
   switch (block._modelApiKey) {
     case 'carousel_block':
       return (
@@ -75,15 +75,16 @@ function renderBlock(block, visual) {
           block={block}
           visual={visual}
           key={block.id}
+          locale={locale}
         />
       );
   }
 }
 
-export default function Blocks({ blocks, visual }) {
+export default function Blocks({ blocks, visual, locale }) {
   return (
     blocks && Object.values(blocks).map((block) => (
-      renderBlock(block, visual)
+      renderBlock(block, visual, locale)
     ))
   );
 }

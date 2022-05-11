@@ -1,9 +1,10 @@
+import i18n from "lib/i18n";
 import { renderHTML } from "lib/html";
 import { uppercaseClass } from 'lib/visual';
 import { anchorId } from "lib/anchors";
 import { useInView } from 'react-intersection-observer';
 
-export default function Text({ block, visual }) {
+export default function Text({ block, visual, locale }) {
   const alignClass = block.alignCenter ? 'text-center mx-auto ' : '';
 
   const { ref, inView, entry } = useInView({
