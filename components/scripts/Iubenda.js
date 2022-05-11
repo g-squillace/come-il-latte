@@ -1,8 +1,8 @@
 import Script from "next/script";
 
 export default function Iubenda({ siteId, policyId, visual, locale }) {
-  const buttonTextColor = visual.colorTextRev.hex
-  const buttonBackColor = visual.colorAccent.hex
+  const buttonTextColor = visual.colorButton.hex
+  const buttonBackColor = visual.colorButtonBack.hex
   return (
     <>
       <Script
