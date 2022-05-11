@@ -27,7 +27,7 @@ export default function Flag({ block, visual }) {
           <div className={`${labelClass} font-bold text-xs uppercase tracking-widest my-2`}>
             {block.label}
           </div>
-          <h2 className={`${uppercaseClass(visual)} font-heading font-medium break-words  text-xl my-4 xl:text-2xl xl:my-6`}>
+          <h2 className={`${uppercaseClass(visual)} font-heading font-medium break-words text-xl my-4 xl:text-2xl xl:my-6`}>
             {block.title}
           </h2>
           <div className="xl:text-lg">
