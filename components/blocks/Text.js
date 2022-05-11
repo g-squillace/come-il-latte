@@ -24,6 +24,17 @@ export default function Text({ block, visual }) {
       </h2>
       <div className={`${alignClass} max-w-xl xl:text-lg`}>
         {renderHTML(block.text)}
+        {block.link && (
+          <div className='mt-8'>
+            <a className='inline-flex rounded bg-accent text-rev uppercase tracking-wide transition-opacity hover:opacity-80 text-sm py-4 px-6 xl:text-lg'
+              href={block.link.url}
+              target="_blank"
+              rel="noreferrer noopener"
+              title={`${i18n.linkExternal.label[locale]} ${block.link.label}`}
+            >{block.link.label}
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

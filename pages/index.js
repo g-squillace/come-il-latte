@@ -190,6 +190,10 @@ export async function getStaticProps({ locale }) {
               title
               text
               alignCenter
+              link {
+                label
+                url
+              }
             }
           }
         }
