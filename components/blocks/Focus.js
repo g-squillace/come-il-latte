@@ -15,7 +15,7 @@ export default function Focus({ block, visual }) {
   return (
     <section
       id={anchorId(block)}
-      className="container scroll-mt-20 my-12 lg:my-24 xl:my-36"
+      className="container scroll-mt-20 lg:scroll-mt-30 xl:scroll-mt-40 my-12 lg:my-24 xl:my-36"
     >
       <div
         ref={ref}

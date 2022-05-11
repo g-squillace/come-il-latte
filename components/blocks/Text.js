@@ -18,7 +18,7 @@ export default function Text({ block, visual, locale }) {
     <section
       id={anchorId(block)}
       ref={ref}
-      className={`${inViewClass} fade-down container scroll-mt-20 my-12 lg:my-24 xl:my-36`}
+      className={`${inViewClass} fade-down container scroll-mt-20 lg:scroll-mt-30 xl:scroll-mt-40 my-12 lg:my-24 xl:my-36`}
     >
       <h2 className={`${alignClass} ${uppercaseClass(visual)} font-heading font-medium text-accent max-w-2xl text-xl mb-6 xl:text-2xl xl:mb-12`}>
         {block.title}
