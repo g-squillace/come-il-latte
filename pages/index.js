@@ -60,6 +60,12 @@ export async function getStaticProps({ locale }) {
           colorAccentRev {
             ${colorFields}
           }
+          colorButton {
+            ${colorFields}
+          }
+          colorButtonBack {
+            ${colorFields}
+          }
           fontBody
           fontHeading
           fontBaseHeight

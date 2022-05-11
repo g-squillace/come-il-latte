@@ -40,6 +40,8 @@ module.exports = {
         'back-rev': withOpacityValue('--color-back-rev'),
         accent: withOpacityValue('--color-accent'),
         'accent-rev': withOpacityValue('--color-accent-rev'),
+        button: withOpacityValue('--color-button'),
+        'button-back': withOpacityValue('--color-button-back'),
       },
       letterSpacing: {
         widest: '.25em'

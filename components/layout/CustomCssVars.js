@@ -15,6 +15,8 @@ export default function CustomCssVars({ data }) {
     colorBackRev,
     colorAccent,
     colorAccentRev,
+    colorButton,
+    colorButtonBack,
     fontBody,
     fontHeading,
     fontBaseHeight,
@@ -45,6 +47,8 @@ export default function CustomCssVars({ data }) {
         --color-back-rev: ${rgbColor(colorBackRev)};
         --color-accent: ${rgbColor(colorAccent)};
         --color-accent-rev: ${rgbColor(colorAccentRev)};
+        --color-button: ${rgbColor(colorButton)};
+        --color-button-back: ${rgbColor(colorButtonBack)};
         --font-body: ${fontBody};
         --font-heading: ${fontHeading};
         --font-xs-size: ${sizeToPx(fontXsSize)};
