@@ -13,6 +13,7 @@ import Blocks from 'components/layout/Blocks';
 
 import Iubenda from 'components/scripts/Iubenda';
 import GoogleAnalytics from 'components/scripts/GoogleAnalytics';
+import GoogleTagManager from 'components/scripts/GoogleTagManager';
 import FacebookPixel from 'components/scripts/FacebookPixel';
 
 export async function getStaticProps({ locale }) {
@@ -94,7 +95,8 @@ export async function getStaticProps({ locale }) {
           phoneNumber
           streetAddress
           facebookPixelId
-          googleTagId
+          googleAnalyticsId
+          googleTagManagerId
           iubendaPolicyId
           iubendaSiteId
         }
@@ -262,8 +264,12 @@ export default function Home({ data }) {
         locale={locale}
       />
 
-      {org.googleTagId && (
-        <GoogleAnalytics id={org.googleTagId} />
+      {org.googleTagManagerId && (
+        <GoogleTagManager id={org.googleTagManagerId} />
+      )}
+
+      {org.googleAnalyticsId && (
+        <GoogleAnalytics id={org.googleAnalyticsId} />
       )}
 
       {org.facebookPixelId && (
