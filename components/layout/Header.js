@@ -18,7 +18,8 @@ export default function Header({ site, visual, org, page, locale }) {
           <Image
             src={visual.logo.url}
             alt={`Logo ${site.globalSeo && site.globalSeo.siteName}`}
-            priority="true"
+            priority={true}
+            lazyLoad={false}
             objectFit="contain"
             layout="fill"
           />
