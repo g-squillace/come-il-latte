@@ -62,10 +62,12 @@ export default function Product({ block, visual }) {
               <Link
                 href={block.link}
                 title={`${block.title} (Apre su una nuova finestra)`}
-                rel="noreferrer"
-                target="_blank"
               >
-                <a className="bg-accent rounded-full text-white uppercase text-sm px-6 py-2 xl:hover:bg-black duration-200 font-heading tracking-wider">
+                <a
+                  className="bg-accent rounded-full text-white uppercase text-sm px-6 py-2 xl:hover:bg-black duration-200 font-heading tracking-wider"
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   Scopri di più
                 </a>
               </Link>
