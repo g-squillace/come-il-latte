@@ -19,7 +19,7 @@ export default function Product({ block, visual }) {
   return (
     <section className="my-8 lg:my-24 xl:my-36">
       <div
-        className={`${alignClass} xl:container flex flex-col-reverse lg:items-start`}
+        className={`${alignClass} xl:container flex flex-col-reverse lg:items-center`}
       >
         <div
           ref={ref}
@@ -45,7 +45,7 @@ export default function Product({ block, visual }) {
             <div className="my-3 text-alt">{renderHTML(block.subText)}</div>
           )}
           {block.smallImages && (
-            <div className="flex gap-8 mt-6">
+            <div className="flex gap-8 my-6">
               {Object.values(block.smallImages).map((smallImage) => (
                 <Image
                   key={smallImage.id}
@@ -58,7 +58,7 @@ export default function Product({ block, visual }) {
             </div>
           )}
           {block.link && (
-            <div className="mt-1">
+            <div className="my-1">
               <Link
                 href={block.link}
                 title={`${block.title} (Apre su una nuova finestra)`}
@@ -68,7 +68,7 @@ export default function Product({ block, visual }) {
                   rel="noreferrer"
                   target="_blank"
                 >
-                  Scopri di più
+                  Scheda tecnica
                 </a>
               </Link>
             </div>
