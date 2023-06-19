@@ -3,8 +3,9 @@ import { uppercaseClass } from "lib/visual";
 import { Image } from "react-datocms";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
+import i18n from "lib/i18n";
 
-export default function Product({ block, visual }) {
+export default function Product({ block, visual, locale }) {
   const image = block.image;
   const alignClass = block.alignRev ? "lg:flex-row-reverse" : "lg:flex-row";
   const contentClass = block.alignRev ? "product-bg-rev" : "product-bg";
@@ -68,7 +69,7 @@ export default function Product({ block, visual }) {
                   rel="noreferrer"
                   target="_blank"
                 >
-                  Scheda tecnica
+                  {i18n.techSheet.label[locale]}
                 </a>
               </Link>
             </div>
