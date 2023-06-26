@@ -14,7 +14,7 @@ export default function Header({ site, visual, org, page, locale }) {
   return (
     <header className="sticky top-0 bg-back z-30">
       <div className="container flex items-center justify-between py-2 xl:py-4">
-        <div className="w-32 h-12 xl:w-48 xl:h-16 relative">
+        <div className="w-24 md:w-32 h-12 xl:w-48 xl:h-16 relative">
           <Image
             src={visual.logo.url}
             alt={`Logo ${site.globalSeo && site.globalSeo.siteName}`}
@@ -51,7 +51,10 @@ export default function Header({ site, visual, org, page, locale }) {
           </nav>
         )}
         {locales.length >= 1 && (
-          <nav className="flex-none" aria-label={i18n.localeNav.label[locale]}>
+          <nav
+            className="flex-none lg:ml-12"
+            aria-label={i18n.localeNav.label[locale]}
+          >
             <ul className="flex items-center gap-5">
               <li>
                 {locales &&
@@ -61,8 +64,8 @@ export default function Header({ site, visual, org, page, locale }) {
                     }
                     return (
                       <Link href="/" locale={l} key={i}>
-                        <a className="button-arrow uppercase text-sm">
-                          {i18n.switchLocale.label[locale]}
+                        <a className="button-arrow uppercase text-xs md:text-sm">
+                          {i18n.switchLocale.label[l]}
                         </a>
                       </Link>
                     );
