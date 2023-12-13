@@ -11,6 +11,7 @@ export default function Footer({ org, visual, site, locale }) {
     newsletterFormUrl,
     phoneNumber,
     streetAddress,
+    logoOcm,
   } = org;
 
   const alignClass = newsletterFormUrl ? "" : "justify-center text-center";
@@ -102,6 +103,17 @@ export default function Footer({ org, visual, site, locale }) {
           </section>
         )}
       </div>
+      {logoOcm && (
+        <div className="w-56 h-10 relative mx-auto">
+          <Image
+            src={logoOcm.url}
+            alt="Logo OCM"
+            objectFit="contain"
+            layout="fill"
+            className=""
+          />
+        </div>
+      )}
       <div className="text-center py-6 text-sm">
         <a
           href="https://www.cantierecreativo.net"
@@ -126,6 +138,14 @@ export default function Footer({ org, visual, site, locale }) {
           title="Privacy Policy"
         >
           Cookie Policy
+        </a>
+        {" - "}
+        <a
+          href="#"
+          className="iubenda-cs-preferences-link"
+          title={i18n.privacyPolicy[locale]}
+        >
+          {i18n.privacyPolicy[locale]}
         </a>
       </div>
     </footer>

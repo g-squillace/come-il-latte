@@ -103,6 +103,9 @@ export async function getStaticProps({ locale }) {
           googleTagManagerId
           iubendaPolicyId
           iubendaSiteId
+          logoOcm{
+            url
+          }
         }
         page: landing(locale: ${formattedLocale}) {
           seo: _seoMetaTags {
