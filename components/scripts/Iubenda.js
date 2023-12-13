@@ -6,19 +6,6 @@ export default function Iubenda({ siteId, policyId, visual, locale }) {
   return (
     <>
       <Script
-        id="iubenda-policy"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-          (function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);
-        `,
-        }}
-      />
-      <Script
-        src="//cdn.iubenda.com/cs/iubenda_cs.js"
-        strategy="afterInteractive"
-      />
-      <Script
         id="iubenda-cs"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -54,6 +41,18 @@ export default function Iubenda({ siteId, policyId, visual, locale }) {
             }
           }`,
         }}
+      />
+      <Script
+        id="iubenda-script"
+        type="text/javascript"
+        strategy="afterInteractive"
+        src={`//cs.iubenda.com/sync/${siteId}.js`}
+      />
+      <Script
+        id="iubenda-cs"
+        type="text/javascript"
+        strategy="afterInteractive"
+        src="//cdn.iubenda.com/cs/beta/iubenda_cs.js"
       />
     </>
   );
