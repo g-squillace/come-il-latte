@@ -45,14 +45,14 @@ export default function Iubenda({ siteId, policyId, visual, locale }) {
       <Script
         id="iubenda-script"
         type="text/javascript"
-        strategy="afterInteractive"
-        src={`//cs.iubenda.com/sync/${siteId}.js`}
+        src="https://cs.iubenda.com/autoblocking/3261627.js"
       />
       <Script
-        id="iubenda-cs"
+        id="iubenda-csa"
         type="text/javascript"
-        strategy="afterInteractive"
-        src="//cdn.iubenda.com/cs/beta/iubenda_cs.js"
+        src="//cdn.iubenda.com/cs/iubenda_cs.js"
+        charset="UTF-8"
+        async={true}
       />
     </>
   );
