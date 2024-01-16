@@ -18,6 +18,8 @@ export default function Iubenda({ siteId, policyId, visual, locale }) {
             "enableLgpd": true,
             "lgpdAppliesGlobally": false,
             "perPurposeConsent": true,
+            "whitelabel":true,
+            "purposes": "1, 3, 4",
             "siteId":${siteId},
             "lang":"${locale}",
             "cookiePolicyId":${policyId},
