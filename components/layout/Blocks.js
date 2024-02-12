@@ -6,6 +6,7 @@ import Focus from "components/blocks/Focus";
 import Product from "components/blocks/Product";
 import Quote from "components/blocks/Quote";
 import Text from "components/blocks/Text";
+import TextListIcons from "components/blocks/TextListIcons";
 
 function renderBlock(block, visual, locale) {
   switch (block._modelApiKey) {
@@ -35,6 +36,16 @@ function renderBlock(block, visual, locale) {
     case "text_block":
       return (
         <Text block={block} visual={visual} key={block.id} locale={locale} />
+      );
+
+    case "text_icons_block":
+      return (
+        <TextListIcons
+          block={block}
+          visual={visual}
+          key={block.id}
+          locale={locale}
+        />
       );
   }
 }

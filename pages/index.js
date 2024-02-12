@@ -127,22 +127,22 @@ export async function getStaticProps({ locale }) {
           }
           contentBlocks {
             ... on CarouselBlockRecord {
-               ${blockSetupFields}
-               images {
-                 id
-                 responsiveImage(sizes: "(min-width: 1024px) 50vw, 100vw", imgixParams: { fit: clip, w: 1200, h: 600, auto: [format,compress] }) {
-                   ...responsiveImageFragment
-                 }
-               }
+              ${blockSetupFields}
+              images {
+                id
+                responsiveImage(sizes: "(min-width: 1024px) 50vw, 100vw", imgixParams: { fit: clip, w: 1200, h: 600, auto: [format,compress] }) {
+                  ...responsiveImageFragment
+                }
+              }
             }
             ... on CoverBlockRecord {
-               ${blockSetupFields}
-               images {
-                 id
-                 responsiveImage(sizes: "100vw", imgixParams: { fit: crop, w: 1550, h: 800, auto: [format,compress] }) {
-                   ...responsiveImageFragment
-                 }
-               }
+              ${blockSetupFields}
+              images {
+                id
+                responsiveImage(sizes: "100vw", imgixParams: { fit: crop, w: 1550, h: 800, auto: [format,compress] }) {
+                  ...responsiveImageFragment
+                }
+              }
             }
             ... on FlagBlockRecord {
               ${blockSetupFields}
@@ -209,6 +209,18 @@ export async function getStaticProps({ locale }) {
               link {
                 label
                 url
+              }
+            }
+            ... on TextIconsBlockRecord {
+              ${blockSetupFields}
+              prefix
+              title
+              colorsRev
+              blocks {
+                text
+                icon {
+                  url
+                }
               }
             }
           }
