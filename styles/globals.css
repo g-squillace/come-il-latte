@@ -35,6 +35,14 @@
     @apply h-72 md:h-96 lg:h-128 xl:h-160;
   }
 
+  .form-label {
+    @apply inline-block mb-1
+  }
+
+  .form-input {
+    @apply block w-full bg-transparent border-solid border-alt border-[1px] caret-accent appearance-none p-4
+  }
+
   @media screen(lg) {
     .product-bg:before {
       @apply -right-full top-0;
