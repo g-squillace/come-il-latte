@@ -3,12 +3,13 @@ import Carousel from "components/blocks/Carousel";
 import Cover from "components/blocks/Cover";
 import Flag from "components/blocks/Flag";
 import Focus from "components/blocks/Focus";
+import Form from "components/blocks/Form";
 import Product from "components/blocks/Product";
 import Quote from "components/blocks/Quote";
 import Text from "components/blocks/Text";
 import TextListIcons from "components/blocks/TextListIcons";
 
-function renderBlock(block, visual, locale) {
+function renderBlock(block, visual, org, locale) {
   switch (block._modelApiKey) {
     case "carousel_block":
       return <Carousel block={block} key={block.id} />;
@@ -21,6 +22,11 @@ function renderBlock(block, visual, locale) {
 
     case "focus_block":
       return <Focus block={block} visual={visual} key={block.id} />;
+    
+    case "form_block":
+      return (
+        <Form block={block} visual={visual} org={org} locale={locale} />
+      );
 
     case "hero_image_block":
       return <HeroImage block={block} visual={visual} key={block.id} />;
@@ -50,9 +56,9 @@ function renderBlock(block, visual, locale) {
   }
 }
 
-export default function Blocks({ blocks, visual, locale }) {
+export default function Blocks({ blocks, visual, org, locale }) {
   return (
     blocks &&
-    Object.values(blocks).map((block) => renderBlock(block, visual, locale))
+    Object.values(blocks).map((block) => renderBlock(block, visual, org, locale))
   );
 }
