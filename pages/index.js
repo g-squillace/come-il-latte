@@ -265,7 +265,12 @@ export default function Home({ data }) {
 
       <main id="content">
         <Blocks blocks={page.headerBlocks} visual={visual} />
-        <Blocks blocks={page.contentBlocks} visual={visual} locale={locale} />
+        <Blocks 
+          blocks={page.contentBlocks}
+          visual={visual}
+          org={org}
+          locale={locale}
+        />
       </main>
 
       <Footer org={org} visual={visual} site={site} locale={locale} />
