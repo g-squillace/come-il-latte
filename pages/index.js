@@ -174,6 +174,11 @@ export async function getStaticProps({ locale }) {
                 }
               }
             }
+            ... on FormBlockRecord {
+              ${blockSetupFields}
+              menuLabel
+              title
+            }
             ... on ProductBlockRecord {
               ${blockSetupFields}
               label
