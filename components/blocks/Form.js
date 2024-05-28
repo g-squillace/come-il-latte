@@ -93,9 +93,11 @@ export default function Form({ block, visual, org, locale }) {
               type="file"
               name="cv"
               id="cv"
+                accept=".pdf"
               required={true}
               className="form-input"
             />
+              <div>{i18n.jobsForm.cvHint[locale]}</div>
           </div>
           <div className="col-span-full">
             <label
