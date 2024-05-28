@@ -36,7 +36,7 @@
   }
 
   .form-label {
-    @apply inline-block mb-1
+    @apply inline-block mb-1 font-bold
   }
 
   .form-input {
