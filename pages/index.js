@@ -178,6 +178,7 @@ export async function getStaticProps({ locale }) {
               ${blockSetupFields}
               menuLabel
               title
+              text
             }
             ... on ProductBlockRecord {
               ${blockSetupFields}
