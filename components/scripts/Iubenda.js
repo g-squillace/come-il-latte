@@ -47,7 +47,7 @@ export default function Iubenda({ siteId, policyId, visual, locale }) {
       <Script
         id="iubenda-script"
         type="text/javascript"
-        src="https://cs.iubenda.com/autoblocking/3261627.js"
+        src={`https://cs.iubenda.com/autoblocking/${siteId}.js`}
       />
       <Script
         id="iubenda-csa"
