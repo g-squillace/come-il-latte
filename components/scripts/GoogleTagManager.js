@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/next-script-for-ga */
 export default function GoogleTagManager({ id }) {
   return (
     <>
