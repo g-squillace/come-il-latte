@@ -16,7 +16,7 @@ export default function HeroImage({ block, visual }) {
           title={image.title}
           layout="fill"
           objectFit="cover"
-          lazyLoad={false}
+          priority={true}
         />
         <div className={`${titleClass} absolute z-20 inset-x-0 bottom-0 container`}>
           <h1 className={`${alignClass} ${uppercaseClass(visual)} max-w-[17ch] font-medium font-heading text-white py-4 text-xl lg:py-8 lg:text-2xl xl:text-3xl`}>
