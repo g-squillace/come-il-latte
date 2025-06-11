@@ -124,6 +124,11 @@ export async function getStaticProps({ locale }) {
                 ...responsiveImageFragment
               }
             }
+            video {
+              video {
+                mp4Url
+              }
+            }
           }
           contentBlocks {
             ... on CarouselBlockRecord {
