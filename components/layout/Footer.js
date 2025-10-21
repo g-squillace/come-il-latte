@@ -17,10 +17,10 @@ export default function Footer({ org, visual, site, locale }) {
   const alignClass = newsletterFormUrl ? "" : "justify-center text-center";
 
   return (
-    <footer id="footer" className="container py-6 ">
+    <footer id="footer" className="py-6 bg-black mt-12">
       <div className={`${alignClass} md:flex gap-16`}>
         <div className="flex-1 my-12">
-          <div className="w-32 h-12 xl:w-48 xl:h-16 relative mx-auto">
+          <div className="w-32 h-32 xl:w-48 xl:h-48 opacity-60 relative mx-auto">
             <Image
               src={visual.logo.url}
               alt={`Logo ${site.globalSeo && site.globalSeo.siteName}`}
@@ -114,14 +114,14 @@ export default function Footer({ org, visual, site, locale }) {
           />
         </div>
       )}
-      <div className="text-center py-6 text-sm">
+      <div className="text-center py-6 text-xs">
         <a
-          href="https://www.cantierecreativo.net"
+          href="https://www.guidosquillace.it"
           target="_blank"
           rel="noreferrer noopener"
-          title={`${i18n.linkExternal.label[locale]} Cantiere Creativo`}
+          title={`Guido Squillace`}
         >
-          Design & Develop by Cantiere Creativo
+          Design & Develop by Guido Squillace
         </a>
         {" - "}
         <a

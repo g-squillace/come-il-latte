@@ -10,7 +10,9 @@ export default function HeroImage({ block, visual }) {
   const titleClass = block.hideTitle ? "sr-only" : "";
 
   return (
-    <header className={`${titleBgClass} mx-auto max-w-screen-2xl relative`}>
+    <header
+      className={`${titleBgClass} mx-auto relative unwrapped max-w-[calc(100vw-8px)] h-[90vh]`}
+    >
       <div className="cover">
         {block.video?.video ? (
           <video

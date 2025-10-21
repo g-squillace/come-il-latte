@@ -28,7 +28,7 @@ export default function Text({ block, visual, locale }) {
         {block.title}
       </h2>
       <div className={`${alignClass} max-w-xl lg:max-w-2xl xl:max-w-5xl`}>
-        {renderHTML(block.text)}
+        <div className="opacity-70">{renderHTML(block.text)}</div>
         {block.link && (
           <div className="mt-8">
             <a

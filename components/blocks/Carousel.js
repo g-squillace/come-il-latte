@@ -5,9 +5,8 @@ import "swiper/css/autoplay";
 import "swiper/css";
 
 export default function Carousel({ block }) {
-  // return "CIAO";
   return (
-    <div className="mx-auto max-w-screen-2xl">
+    <div className="">
       <Swiper
         keyboard={true}
         modules={[A11y, Autoplay]}

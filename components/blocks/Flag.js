@@ -42,7 +42,7 @@ export default function Flag({ block, visual }) {
           >
             {block.title}
           </h2>
-          <div className="xl:text-lg">{renderHTML(block.text)}</div>
+          <div className="xl:text-lg opacity-70">{renderHTML(block.text)}</div>
         </div>
         <div className="flex-1 my-8 lg:my-0">
           <div className="lg:px-12">

@@ -3,8 +3,9 @@ import { anchorId } from "lib/anchors";
 import Widget from "components/blocks/Widget";
 import { useInView } from "react-intersection-observer";
 import { uppercaseClass } from "lib/visual";
+import Image from "next/image";
 
-export default function Focus({ block, visual }) {
+export default function Focus({ block, visual, icecream }) {
   const { ref, inView, entry } = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -15,7 +16,7 @@ export default function Focus({ block, visual }) {
   return (
     <section
       id={anchorId(block)}
-      className="container scroll-mt-20 lg:scroll-mt-30 xl:scroll-mt-40 my-12 lg:my-24 xl:my-36"
+      className="container list scroll-mt-20 lg:scroll-mt-30 xl:scroll-mt-40 my-12 lg:my-24 xl:my-36"
     >
       <div
         ref={ref}
@@ -28,12 +29,20 @@ export default function Focus({ block, visual }) {
         >
           {block.title}
         </h2>
-        <div className="xl:text-lg">{renderHTML(block.text)}</div>
+        <div className="xl:text-lg opacity-70">{renderHTML(block.text)}</div>
       </div>
-      <div className="lg:flex lg:justify-between lg:gap-12 xl:gap-18">
-        {block.elements &&
-          Object.values(block.elements).map((element) => (
-            <Widget block={element} key={element.id} visual={visual} />
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-12 items-start">
+        {icecream &&
+          Object.values(icecream).map((i) => (
+            <div key={i.id} className="rounded-lg grid gap-5 justify-start">
+              <div className="flex items-center">
+                {/* <Image src={i.icon.url} width={80} height={80} /> */}
+                <h2 className="text-xl uppercase text-center w-full bg-black py-2 block text-accent">
+                  {i.title}
+                </h2>
+              </div>
+              <div className="text-sm">{renderHTML(i.list)}</div>
+            </div>
           ))}
       </div>
     </section>

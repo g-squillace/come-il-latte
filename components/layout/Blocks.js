@@ -9,7 +9,7 @@ import Quote from "components/blocks/Quote";
 import Text from "components/blocks/Text";
 import TextListIcons from "components/blocks/TextListIcons";
 
-function renderBlock(block, visual, org, locale) {
+function renderBlock(block, visual, org, icecream, locale) {
   switch (block._modelApiKey) {
     case "carousel_block":
       return <Carousel block={block} key={block.id} />;
@@ -21,12 +21,17 @@ function renderBlock(block, visual, org, locale) {
       return <Flag block={block} visual={visual} key={block.id} />;
 
     case "focus_block":
-      return <Focus block={block} visual={visual} key={block.id} />;
-    
-    case "form_block":
       return (
-        <Form block={block} visual={visual} org={org} locale={locale} />
+        <Focus
+          block={block}
+          icecream={icecream}
+          visual={visual}
+          key={block.id}
+        />
       );
+
+    case "form_block":
+      return <Form block={block} visual={visual} org={org} locale={locale} />;
 
     case "hero_image_block":
       return <HeroImage block={block} visual={visual} key={block.id} />;
@@ -36,7 +41,7 @@ function renderBlock(block, visual, org, locale) {
         <Product block={block} visual={visual} key={block.id} locale={locale} />
       );
 
-    case "quote_block":
+    case "quote":
       return <Quote block={block} key={block.id} />;
 
     case "text_block":
@@ -56,9 +61,11 @@ function renderBlock(block, visual, org, locale) {
   }
 }
 
-export default function Blocks({ blocks, visual, org, locale }) {
+export default function Blocks({ blocks, icecream, visual, org, locale }) {
   return (
     blocks &&
-    Object.values(blocks).map((block) => renderBlock(block, visual, org, locale))
+    Object.values(blocks).map((block) =>
+      renderBlock(block, visual, org, icecream, locale)
+    )
   );
 }

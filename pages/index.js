@@ -144,7 +144,7 @@ export async function getStaticProps({ locale }) {
               ${blockSetupFields}
               images {
                 id
-                responsiveImage(sizes: "100vw", imgixParams: { fit: crop, w: 1550, h: 800, auto: [format,compress] }) {
+                responsiveImage(sizes: "100vw", imgixParams: { fit: crop, w: 1550, h: 900, auto: [format,compress] }) {
                   ...responsiveImageFragment
                 }
               }
@@ -211,6 +211,14 @@ export async function getStaticProps({ locale }) {
               text
               authorName
             }
+            ... on QuoteRecord {
+              ${blockSetupFields}
+              quotes {
+                ${blockSetupFields}
+                text
+                authorName
+              }
+            }
             ... on TextBlockRecord {
               ${blockSetupFields}
               menuLabel
@@ -236,6 +244,14 @@ export async function getStaticProps({ locale }) {
             }
           }
         }
+        allIcecreams (locale: ${formattedLocale}) {
+          title
+          icon {
+            url
+            id
+          }
+          list
+        }
       }
       ${responsiveImageFragment}
     `,
@@ -250,7 +266,7 @@ export async function getStaticProps({ locale }) {
 
 export default function Home({ data }) {
   const locale = useRouter().locale;
-  const { site, page, org, visual } = data;
+  const { site, page, org, visual, allIcecreams } = data;
 
   return (
     <>
@@ -273,6 +289,7 @@ export default function Home({ data }) {
         <Blocks blocks={page.headerBlocks} visual={visual} />
         <Blocks
           blocks={page.contentBlocks}
+          icecream={allIcecreams}
           visual={visual}
           org={org}
           locale={locale}
