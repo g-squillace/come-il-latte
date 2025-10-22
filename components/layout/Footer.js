@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image } from "react-datocms";
 import { renderHTML } from "lib/html";
 import i18n from "lib/i18n";
 import SignupForm from "components/SignupForm";
@@ -22,11 +22,12 @@ export default function Footer({ org, visual, site, locale }) {
         <div className="flex-1 my-12">
           <div className="w-32 h-32 xl:w-48 xl:h-48 opacity-60 relative mx-auto">
             <Image
-              src={visual.logo.url}
-              alt={`Logo ${site.globalSeo && site.globalSeo.siteName}`}
-              objectFit="contain"
+              data={visual.logo.responsiveImage}
+              alt={visual.logo.alt}
+              title={visual.logo.title}
               layout="fill"
-              className="scale-90"
+              objectFit="cover"
+              priority={true}
             />
           </div>
           {streetAddress && (

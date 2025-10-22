@@ -38,7 +38,10 @@ export async function getStaticProps({ locale }) {
         }
         visual: visualStyle {
           logo {
-            url
+            id
+            responsiveImage(sizes: "(min-width: 1024px) 50vw, 200px", imgixParams: { fit: clip, w: 200, h: 200, auto: [format,compress] }) {
+              ...responsiveImageFragment
+            }
           }
           uppercaseTitles
           colorText {
