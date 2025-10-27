@@ -31,17 +31,14 @@ export default function Focus({ block, visual, icecream }) {
         </h2>
         <div className="xl:text-lg opacity-70">{renderHTML(block.text)}</div>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-12 items-start">
+      <div className="md:columns-2 items-start">
         {icecream &&
           Object.values(icecream).map((i) => (
-            <div key={i.id} className="rounded-lg grid gap-5 justify-start">
-              <div className="flex items-center">
-                {/* <Image src={i.icon.url} width={80} height={80} /> */}
-                <h2 className="text-xl uppercase text-center w-full bg-black py-2 block text-accent">
-                  {i.title}
-                </h2>
-              </div>
-              <div className="text-sm">{renderHTML(i.list)}</div>
+            <div key={i.id} className="mb-2">
+              <h2 className="text-xl uppercase text-center w-full bg-black py-2 block text-accent mb-2">
+                {i.title}
+              </h2>
+              <div className="text-sm mb-2">{renderHTML(i.list)}</div>
             </div>
           ))}
       </div>
