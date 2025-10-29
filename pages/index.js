@@ -171,16 +171,7 @@ export async function getStaticProps({ locale }) {
               menuLabel
               title
               text
-              elements {
-                id
-                title
-                text
-                image {
-                  responsiveImage(sizes: "(min-width: 1024px) 33vw, 100vw", imgixParams: { fit: crop, w: 800, h: 800, auto: [format,compress] }) {
-                    ...responsiveImageFragment
-                  }
-                }
-              }
+             
             }
             ... on FormBlockRecord {
               ${blockSetupFields}

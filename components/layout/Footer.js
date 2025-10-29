@@ -122,7 +122,7 @@ export default function Footer({ org, visual, site, locale }) {
           rel="noreferrer noopener"
           title={`Guido Squillace`}
         >
-          Design & Develop by Guido Squillace
+          {i18n.credits[locale]}
         </a>
         {" - "}
         <a
@@ -130,7 +130,7 @@ export default function Footer({ org, visual, site, locale }) {
           className="iubenda-nostyle no-brand iubenda-noiframe iubenda-embed"
           title="Privacy Policy"
         >
-          Privacy Policy
+          {i18n.privacyPolicy[locale]}
         </a>
         {" - "}
         <a
@@ -138,7 +138,7 @@ export default function Footer({ org, visual, site, locale }) {
           className="iubenda-nostyle no-brand iubenda-noiframe iubenda-embed"
           title="Privacy Policy"
         >
-          Cookie Policy
+          {i18n.cookiePolicy[locale]}
         </a>
         {" - "}
         <a
