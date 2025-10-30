@@ -292,12 +292,12 @@ export default function Home({ data }) {
 
       <Footer org={org} visual={visual} site={site} locale={locale} />
 
-      {/* <Iubenda
+      <Iubenda
         siteId={org.iubendaSiteId}
         policyId={org.iubendaPolicyId}
         visual={visual}
         locale={locale}
-      /> */}
+      />
 
       {org.googleTagManagerId && (
         <GoogleTagManager id={org.googleTagManagerId} />

@@ -36,7 +36,7 @@ export default function Iubenda({ siteId, policyId, visual, locale }) {
               "customizeButtonCaptionColor":"${buttonTextColor}",
               "rejectButtonColor":"${buttonBackColor}",
               "rejectButtonCaptionColor":"${buttonTextColor}",
-              "textColor":"${visual.colorText.hex}",
+              "textColor":"black",
               "backgroundColor":"${visual.colorBack.hex}",
               "rejectButtonDisplay":true,
               "showPurposesToggles":true
