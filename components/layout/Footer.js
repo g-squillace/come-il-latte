@@ -146,7 +146,7 @@ export default function Footer({ org, visual, site, locale }) {
           className="iubenda-cs-preferences-link"
           title={i18n.preferencePolicy[locale]}
         >
-          {i18n.privacyPolicy[locale]}
+          {i18n.preferencePolicy[locale]}
         </a>
       </div>
     </footer>
