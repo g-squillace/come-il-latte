@@ -8,12 +8,20 @@ import {
 } from "lib/fragments";
 import { renderMetaTags } from "react-datocms";
 import { setGoogleFonts } from "lib/fonts";
+import {
+  appTags,
+  canonicalAndAlternateTags,
+  openGraphImageUrl,
+  withLargeTwitterCard,
+  withoutEmptyMetaTags,
+} from "lib/seo";
 
 import CustomCssVars from "components/layout/CustomCssVars";
 import SkipLinks from "components/layout/SkipLinks";
 import Header from "components/layout/Header";
 import Footer from "components/layout/Footer";
 import Blocks from "components/layout/Blocks";
+import StructuredData from "components/layout/StructuredData";
 
 import Iubenda from "components/scripts/Iubenda";
 import GoogleAnalytics from "components/scripts/GoogleAnalytics";
@@ -255,19 +263,40 @@ export async function getStaticProps({ locale }) {
     props: {
       data: await request(graphqlRequest),
     },
+    revalidate: 3600,
   };
 }
 
 export default function Home({ data }) {
-  const locale = useRouter().locale;
+  const { locale, defaultLocale, locales } = useRouter();
   const { site, page, org, visual, allIcecreams } = data;
+
+  const translatedLocales = locales.filter((available) =>
+    page._locales.includes(available)
+  );
+  const metaTags = withLargeTwitterCard(withoutEmptyMetaTags(page.seo));
 
   return (
     <>
       <Head>
         {setGoogleFonts(visual)}
-        {renderMetaTags(page.seo.concat(site.favicon))}
+        {renderMetaTags(metaTags.concat(site.favicon))}
+        {canonicalAndAlternateTags({
+          locale,
+          defaultLocale,
+          locales: translatedLocales,
+        })}
+        {appTags(site.favicon)}
       </Head>
+
+      <StructuredData
+        site={site}
+        org={org}
+        visual={visual}
+        locale={locale}
+        defaultLocale={defaultLocale}
+        imageUrl={openGraphImageUrl(page.seo)}
+      />
 
       <CustomCssVars data={visual} />
       <SkipLinks locale={locale} />
