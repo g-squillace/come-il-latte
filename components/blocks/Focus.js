@@ -35,9 +35,9 @@ export default function Focus({ block, visual, icecream }) {
         {icecream &&
           Object.values(icecream).map((i) => (
             <div key={i.id} className="mb-2">
-              <h2 className="text-xl uppercase text-center w-full bg-black py-2 block text-accent mb-2">
+              <h3 className="text-xl uppercase text-center w-full bg-black py-2 block text-accent mb-2">
                 {i.title}
-              </h2>
+              </h3>
               <div className="text-sm mb-2">{renderHTML(i.list)}</div>
             </div>
           ))}
