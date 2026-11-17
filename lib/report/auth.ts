@@ -2,6 +2,7 @@ import type { ServerResponse } from 'http';
 import type { GetServerSidePropsContext, NextApiRequest, NextApiResponse } from 'next';
 import { REPORT } from './config.ts';
 import { readEnv } from './env.ts';
+import { subtle } from './subtle.ts';
 
 export const SESSION_COOKIE = 'gs_report_session';
 
@@ -46,14 +47,14 @@ function sessionSecret(): string {
 }
 
 async function sign(value: string): Promise<string> {
-  const key = await crypto.subtle.importKey(
+  const key = await subtle.importKey(
     'raw',
     encoder.encode(sessionSecret()),
     { name: 'HMAC', hash: 'SHA-256' },
     false,
     ['sign'],
   );
-  const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(value));
+  const signature = await subtle.sign('HMAC', key, encoder.encode(value));
   return base64UrlEncode(new Uint8Array(signature));
 }
 

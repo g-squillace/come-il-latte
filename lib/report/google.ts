@@ -1,4 +1,5 @@
 import { readEnv } from './env.ts';
+import { subtle } from './subtle.ts';
 
 const TOKEN_ENDPOINT = 'https://oauth2.googleapis.com/token';
 
@@ -97,14 +98,14 @@ export async function accessToken(): Promise<string> {
     }),
   );
 
-  const key = await crypto.subtle.importKey(
+  const key = await subtle.importKey(
     'pkcs8',
     pemToArrayBuffer(account.privateKey),
     { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' },
     false,
     ['sign'],
   );
-  const signature = await crypto.subtle.sign(
+  const signature = await subtle.sign(
     'RSASSA-PKCS1-v1_5',
     key,
     new TextEncoder().encode(`${header}.${claims}`),
