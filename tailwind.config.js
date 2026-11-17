@@ -13,6 +13,17 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    extend: {
+      keyframes: {
+        'report-bar': {
+          '0%, 100%': { transform: 'scaleY(0.4)' },
+          '50%': { transform: 'scaleY(1)' },
+        },
+      },
+      animation: {
+        'report-bar': 'report-bar 1.1s ease-in-out infinite',
+      },
+    },
     container: {
       center: true,
       padding: '2rem'

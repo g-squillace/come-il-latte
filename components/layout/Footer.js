@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Image } from "react-datocms";
 import { renderHTML } from "lib/html";
 import i18n from "lib/i18n";
@@ -148,6 +149,25 @@ export default function Footer({ org, visual, site, locale }) {
         >
           {i18n.preferencePolicy[locale]}
         </a>
+        <div className="mt-4">
+          <Link href="/report" prefetch={false}>
+            <a
+              rel="nofollow"
+              className="inline-flex min-h-[44px] items-center gap-2 px-2 opacity-70 hover:opacity-100 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-current"
+            >
+              <svg
+                className="w-4 h-4 fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <path d="M3 21V9h4v12H3zm7 0V3h4v18h-4zm7 0v-8h4v8h-4z" />
+              </svg>
+              {i18n.siteReport[locale]}
+            </a>
+          </Link>
+        </div>
       </div>
     </footer>
   );

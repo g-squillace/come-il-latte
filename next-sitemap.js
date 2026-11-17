@@ -6,9 +6,13 @@ const defaultLocale = process.env.NEXT_DEFAULT_LOCALE || "it";
 const locales = (process.env.NEXT_LOCALES || "it,en,ja,ko").split(",");
 
 const errorPages = ["/404", "/500"];
-const exclude = errorPages.concat(
+const privatePages = ["/report", "/report/login"];
+const exclude = errorPages.concat(privatePages).concat(
   locales.reduce(
-    (paths, locale) => paths.concat(errorPages.map((page) => `/${locale}${page}`)),
+    (paths, locale) =>
+      paths.concat(
+        errorPages.concat(privatePages).map((page) => `/${locale}${page}`)
+      ),
     []
   )
 );
@@ -34,6 +38,9 @@ module.exports = {
   },
   transform: async (config, path) => {
     if (errorPages.some((page) => path.endsWith(page))) {
+      return undefined;
+    }
+    if (path === "/report" || path.startsWith("/report/") || path.includes("/report")) {
       return undefined;
     }
 
