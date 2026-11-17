@@ -1,5 +1,5 @@
 export const REPORT = {
-  ga4PropertyId: '',
+  ga4PropertyId: '511140954',
   searchConsoleSiteUrl: 'sc-domain:comeillatte.it',
   siteName: 'Come il Latte',
   siteUrl: 'https://comeillatte.it',
