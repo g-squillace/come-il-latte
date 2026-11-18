@@ -32,6 +32,20 @@ export interface PageRow {
   sessions: number;
 }
 
+export interface LanguageRow {
+  code: string;
+  label: string;
+  views: number;
+  sessions: number;
+  share: number;
+}
+
+export interface LanguagesSection {
+  versions: LanguageRow[];
+  visitors: NamedRow[];
+  note: string | null;
+}
+
 export interface QueryRow {
   query: string;
   clicks: number;
@@ -117,6 +131,7 @@ export interface SiteReport {
   generatedAt: string;
   leads: LeadsSection;
   traffic: TrafficSection;
+  languages: LanguagesSection;
   search: SearchSection;
   trend: TrendPoint[];
   demandGap: DemandGap | null;
