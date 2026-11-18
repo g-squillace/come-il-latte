@@ -61,11 +61,11 @@ export default function Header({ site, visual, org, page, locale }) {
             aria-label={i18n.mainNav.label[locale]}
             className="hidden lg:block flex-1"
           >
-            <ul className="flex gap-6 items-center justify-end">
+            <ul className="flex gap-4 items-center justify-end">
               {menuItems.map((item) => (
                 <li className="flex-none" key={item}>
                   <a
-                    className="button uppercase text-sm"
+                    className="button uppercase text-xs"
                     href={`#${slugify(item)}`}
                   >
                     {item}
@@ -74,7 +74,10 @@ export default function Header({ site, visual, org, page, locale }) {
               ))}
               {contactsMenuLabel && (
                 <li className="flex-none">
-                  <a className="button uppercase text-sm" href={`#footer`}>
+                  <a
+                    className="button uppercase text-xs"
+                    href={`#footer`}
+                  >
                     {contactsMenuLabel}
                   </a>
                 </li>
@@ -96,7 +99,7 @@ export default function Header({ site, visual, org, page, locale }) {
                     }
                     return (
                       <Link href="/" locale={l} key={i}>
-                        <a className="button-arrow uppercase text-xs md:text-sm">
+                        <a className="button-arrow uppercase text-xs">
                           {i18n.switchLocale.label[l]}
                         </a>
                       </Link>
