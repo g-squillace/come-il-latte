@@ -2,6 +2,7 @@ import { LEAD_EVENTS, fetchAnalytics, propertyId } from "./analytics.ts";
 import type { AnalyticsPeriod, AnalyticsTotals } from "./analytics.ts";
 import { REPORT } from "./config.ts";
 import { readEnv } from "./env.ts";
+import { formatPercent } from "./format.ts";
 import {
   buildHeadline,
   demandGap,
@@ -11,11 +12,13 @@ import {
   strikingDistance,
   upsellSignals,
 } from "./insights.ts";
+import { defaultSiteLocale, languageLabel, siteVersions, visitorLanguages } from "./languages.ts";
 import { completePeriod, periodWeekBuckets } from "./period.ts";
 import { fetchSearchConsole, siteUrl } from "./search-console.ts";
 import type { SearchPeriod, SearchTotals } from "./search-console.ts";
 import { demoAnalytics, demoSearch } from "./demo.ts";
 import type {
+  LanguagesSection,
   LeadsSection,
   MetricPair,
   NamedRow,
@@ -112,6 +115,28 @@ function buildTraffic(current: AnalyticsPeriod, previous: AnalyticsTotals): Traf
     devices: current.devices,
     topPages: current.pages,
   };
+}
+
+function buildLanguages(current: AnalyticsPeriod): LanguagesSection {
+  const versions = siteVersions(current.pages);
+  const visitors = visitorLanguages(current.languages, 8);
+  const defaultLabel = languageLabel(defaultSiteLocale());
+  const foreignVisitors = visitors
+    .filter((row) => row.label !== defaultLabel)
+    .reduce((sum, row) => sum + row.share, 0);
+  const translatedViews = versions
+    .filter((row) => row.code !== defaultSiteLocale())
+    .reduce((sum, row) => sum + row.share, 0);
+
+  const gap = foreignVisitors - translatedViews;
+  const note =
+    versions.length > 1 && visitors.length > 0 && gap >= 0.1
+      ? `${formatPercent(foreignVisitors)} di chi vi visita non ha il computer in ${defaultLabel.toLowerCase()}, ` +
+        `ma solo ${formatPercent(translatedViews)} delle pagine aperte è in un'altra lingua: ` +
+        "una parte di chi arriva dall'estero resta sulla versione italiana senza accorgersi che esistono le altre."
+      : null;
+
+  return { versions, visitors, note };
 }
 
 function leadRows(events: NamedRow[]): NamedRow[] {
@@ -245,6 +270,7 @@ export async function buildSiteReport(weeks: number, periodsBack: number): Promi
     generatedAt: new Date().toISOString(),
     leads,
     traffic: buildTraffic(analytics.data.current, analytics.data.previous),
+    languages: buildLanguages(analytics.data.current),
     search: buildSearch(search.data.current, search.data.previous),
     trend: buildTrend(period, analytics.data.current, search.data.current),
     demandGap: gap,

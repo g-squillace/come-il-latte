@@ -85,6 +85,14 @@ export function demoAnalytics(period: PeriodRange): {
         ["page_view", Math.round(sessions * 1.42)],
         ["scroll", Math.round(sessions * 0.52)],
       ]),
+      languages: named([
+        ["en-us", Math.round(sessions * 0.41)],
+        ["it-it", Math.round(sessions * 0.3)],
+        ["en-gb", Math.round(sessions * 0.11)],
+        ["fr-fr", Math.round(sessions * 0.06)],
+        ["es-es", Math.round(sessions * 0.04)],
+        ["ja-jp", Math.round(sessions * 0.02)],
+      ]),
     },
     previous: {
       sessions: Math.round(sessions * 0.88),

@@ -37,6 +37,7 @@ export interface AnalyticsPeriod {
   devices: NamedRow[];
   pages: PageRow[];
   events: NamedRow[];
+  languages: NamedRow[];
 }
 
 export function propertyId(): string | null {
@@ -191,6 +192,13 @@ export async function fetchAnalytics(
           limit: 6,
         },
         {
+          dateRanges: currentRange,
+          dimensions: [{ name: "languageCode" }],
+          metrics: [{ name: "sessions" }],
+          orderBys: [{ metric: { metricName: "sessions" }, desc: true }],
+          limit: 40,
+        },
+        {
           dateRanges: [{ startDate: previous.start, endDate: previous.end }],
           metrics: TOTALS_METRICS,
         },
@@ -229,8 +237,9 @@ export async function fetchAnalytics(
       devices: toNamedRows(readRows(secondaryReports[0]), 4),
       pages,
       events: toNamedRows(readRows(primaryReports[4]), 60),
+      languages: toNamedRows(readRows(secondaryReports[1]), 40),
     },
-    previous: totalsFromRows(readRows(secondaryReports[1])),
-    previousEvents: toNamedRows(readRows(secondaryReports[2]), 60),
+    previous: totalsFromRows(readRows(secondaryReports[2])),
+    previousEvents: toNamedRows(readRows(secondaryReports[3]), 60),
   };
 }

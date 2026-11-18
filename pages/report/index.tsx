@@ -7,6 +7,7 @@ import MetricCard from "components/report/MetricCard";
 import UpsellTheme from "components/report/UpsellTheme";
 import OpportunityTable from "components/report/OpportunityTable";
 import TrendChart from "components/report/TrendChart";
+import LanguageSplit from "components/report/LanguageSplit";
 import { currentSession } from "lib/report/auth.ts";
 import { REPORT } from "lib/report/config.ts";
 import {
@@ -210,6 +211,8 @@ export default function ReportPage({ role }: Props) {
                   non vi conosceva.
                 </p>
               </section>
+
+              <LanguageSplit languages={report.languages} />
 
               <TrendChart points={report.trend} />
 
